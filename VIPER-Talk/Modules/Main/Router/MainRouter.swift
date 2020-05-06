@@ -14,12 +14,12 @@ final class MainRouter: MainRouterProtocol {
     
     static func createModule() -> UIViewController {
         let view: MainViewController = MainViewController()
-        let interractor: MainInteractor = MainInteractor()
+        let interactor: MainInteractor = MainInteractor()
         let router: MainRouter = MainRouter()
-        let presenter: MainPresenter = MainPresenter(view: view, interactor: interractor, router: router)
+        let presenter: MainPresenter = MainPresenter(view: view, interactor: interactor, router: router)
         
         view.presenter = presenter
-        interractor.presenter = presenter
+        interactor.presenter = presenter
         router.viewController = view
         
         return view

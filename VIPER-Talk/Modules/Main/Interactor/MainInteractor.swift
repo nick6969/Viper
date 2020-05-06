@@ -8,8 +8,8 @@
 
 import Foundation
 
-final class MainInteractor: MainInteractorProtocol {
+final class MainInteractor: MainInputInteractorProtocol {
     
-    var presenter: MainPresenterProtocol?
+    var presenter: MainOutputInteractorProtocol?
     
 }

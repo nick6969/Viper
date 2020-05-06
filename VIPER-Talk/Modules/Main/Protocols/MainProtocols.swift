@@ -10,22 +10,27 @@ import Foundation
 
 // MARK: Router
 protocol MainRouterProtocol: AnyObject {
-    
+    // Presenter -> Router
 }
 
 // MARK: Presenter
 protocol MainPresenterProtocol: AnyObject {
-    
+    //View -> Presenter
 }
 
-// MARK: Interactor
-protocol MainInteractorProtocol: AnyObject {
-    
-    var presenter: MainPresenterProtocol? { get set }
+// MARK: Interactor Input
+protocol MainInputInteractorProtocol: AnyObject {
+    // Presenter -> Interactor
+    var presenter: MainOutputInteractorProtocol? { get set }
+}
+
+// MARK: Interactor Output
+protocol MainOutputInteractorProtocol: AnyObject {
+    // Interactor -> Presenter
 }
 
 // MARK: View
 protocol MainViewProtocol: AnyObject {
-    
+    // PRESENTER -> VIEW
     var presenter: MainPresenterProtocol? { get set }
 }

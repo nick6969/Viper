@@ -11,12 +11,16 @@ import Foundation
 final class MainPresenter: MainPresenterProtocol {
     
     private weak var view: MainViewProtocol?
-    var interactor: MainInteractorProtocol?
+    var interactor: MainInputInteractorProtocol?
     private let router: MainRouterProtocol
     
-    init(view: MainViewProtocol, interactor: MainInteractorProtocol, router: MainRouterProtocol) {
+    init(view: MainViewProtocol, interactor: MainInputInteractorProtocol, router: MainRouterProtocol) {
         self.view = view
         self.interactor = interactor
         self.router = router
     }
+}
+
+extension MainPresenter: MainOutputInteractorProtocol {
+    // Interactor -> Presenter
 }

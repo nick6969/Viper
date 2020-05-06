@@ -6,7 +6,6 @@
 //  Copyright © 2020 co.Kcin.Nil. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 final class MainViewController: UIViewController, MainViewProtocol {
