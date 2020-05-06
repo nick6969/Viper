@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,11 @@
 		01184362246245D000007317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01184361246245D000007317 /* Assets.xcassets */; };
 		01184365246245D000007317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01184363246245D000007317 /* LaunchScreen.storyboard */; };
 		01184370246245D100007317 /* VIPERTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0118436F246245D100007317 /* VIPERTalkTests.swift */; };
+		017E0E1524624E22007FCBC6 /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E0E1424624E22007FCBC6 /* MainProtocols.swift */; };
+		017E0E17246251C5007FCBC6 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E0E16246251C5007FCBC6 /* MainRouter.swift */; };
+		017E0E19246251E1007FCBC6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E0E18246251E1007FCBC6 /* MainViewController.swift */; };
+		017E0E1B24625220007FCBC6 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E0E1A24625220007FCBC6 /* MainInteractor.swift */; };
+		017E0E1D24625233007FCBC6 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E0E1C24625233007FCBC6 /* MainPresenter.swift */; };
 		78556EF259BD5F2C2983E5A7 /* Pods_VIPER_Talk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13631AD319274D9EA11157AA /* Pods_VIPER_Talk.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +38,11 @@
 		0118436B246245D000007317 /* VIPER-TalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VIPER-TalkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0118436F246245D100007317 /* VIPERTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPERTalkTests.swift; sourceTree = "<group>"; };
 		01184371246245D100007317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		017E0E1424624E22007FCBC6 /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
+		017E0E16246251C5007FCBC6 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		017E0E18246251E1007FCBC6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		017E0E1A24625220007FCBC6 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		017E0E1C24625233007FCBC6 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		02CC5BB079CE6804555DD8D2 /* Pods-VIPER-Talk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPER-Talk.release.xcconfig"; path = "Target Support Files/Pods-VIPER-Talk/Pods-VIPER-Talk.release.xcconfig"; sourceTree = "<group>"; };
 		13631AD319274D9EA11157AA /* Pods_VIPER_Talk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPER_Talk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B53ABB58D5063308DBAEC3B /* Pods-VIPER-Talk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPER-Talk.debug.xcconfig"; path = "Target Support Files/Pods-VIPER-Talk/Pods-VIPER-Talk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,7 +90,9 @@
 		01184357246245CE00007317 /* VIPER-Talk */ = {
 			isa = PBXGroup;
 			children = (
+				017E0E0A24624BF9007FCBC6 /* AppUI */,
 				017E0E09246248BD007FCBC6 /* Asset */,
+				017E0E0C24624C40007FCBC6 /* Modules */,
 				017E0E08246248B1007FCBC6 /* UI */,
 				01184358246245CE00007317 /* AppDelegate.swift */,
 				01184366246245D000007317 /* Info.plist */,
@@ -113,13 +125,87 @@
 			path = Asset;
 			sourceTree = "<group>";
 		};
+		017E0E0A24624BF9007FCBC6 /* AppUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppUI;
+			sourceTree = "<group>";
+		};
+		017E0E0C24624C40007FCBC6 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				017E0E0D24624C5D007FCBC6 /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		017E0E0D24624C5D007FCBC6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				017E0E1124624DF2007FCBC6 /* Entity */,
+				017E0E0F24624DD0007FCBC6 /* Interactor */,
+				017E0E1024624DDE007FCBC6 /* Presenter */,
+				017E0E1324624E04007FCBC6 /* Protocols */,
+				017E0E1224624DFB007FCBC6 /* Router */,
+				017E0E0E24624DC9007FCBC6 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		017E0E0E24624DC9007FCBC6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				017E0E18246251E1007FCBC6 /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		017E0E0F24624DD0007FCBC6 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				017E0E1A24625220007FCBC6 /* MainInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		017E0E1024624DDE007FCBC6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				017E0E1C24625233007FCBC6 /* MainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		017E0E1124624DF2007FCBC6 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		017E0E1224624DFB007FCBC6 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				017E0E16246251C5007FCBC6 /* MainRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		017E0E1324624E04007FCBC6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				017E0E1424624E22007FCBC6 /* MainProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		4D3799BDE7151F1C2536D2B6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				6B53ABB58D5063308DBAEC3B /* Pods-VIPER-Talk.debug.xcconfig */,
 				02CC5BB079CE6804555DD8D2 /* Pods-VIPER-Talk.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -295,6 +381,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				01184359246245CE00007317 /* AppDelegate.swift in Sources */,
+				017E0E1B24625220007FCBC6 /* MainInteractor.swift in Sources */,
+				017E0E1D24625233007FCBC6 /* MainPresenter.swift in Sources */,
+				017E0E1524624E22007FCBC6 /* MainProtocols.swift in Sources */,
+				017E0E17246251C5007FCBC6 /* MainRouter.swift in Sources */,
+				017E0E19246251E1007FCBC6 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
