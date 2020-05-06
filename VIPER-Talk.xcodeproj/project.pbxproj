@@ -11,6 +11,7 @@
 		01184362246245D000007317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01184361246245D000007317 /* Assets.xcassets */; };
 		01184365246245D000007317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01184363246245D000007317 /* LaunchScreen.storyboard */; };
 		01184370246245D100007317 /* VIPERTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0118436F246245D100007317 /* VIPERTalkTests.swift */; };
+		78556EF259BD5F2C2983E5A7 /* Pods_VIPER_Talk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13631AD319274D9EA11157AA /* Pods_VIPER_Talk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,9 @@
 		0118436B246245D000007317 /* VIPER-TalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VIPER-TalkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0118436F246245D100007317 /* VIPERTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPERTalkTests.swift; sourceTree = "<group>"; };
 		01184371246245D100007317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02CC5BB079CE6804555DD8D2 /* Pods-VIPER-Talk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPER-Talk.release.xcconfig"; path = "Target Support Files/Pods-VIPER-Talk/Pods-VIPER-Talk.release.xcconfig"; sourceTree = "<group>"; };
+		13631AD319274D9EA11157AA /* Pods_VIPER_Talk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPER_Talk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B53ABB58D5063308DBAEC3B /* Pods-VIPER-Talk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPER-Talk.debug.xcconfig"; path = "Target Support Files/Pods-VIPER-Talk/Pods-VIPER-Talk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78556EF259BD5F2C2983E5A7 /* Pods_VIPER_Talk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +60,8 @@
 		0118434C246245CE00007317 = {
 			isa = PBXGroup;
 			children = (
+				9D78A4B64F50203B6C17AEE8 /* Frameworks */,
+				4D3799BDE7151F1C2536D2B6 /* Pods */,
 				01184356246245CE00007317 /* Products */,
 				01184357246245CE00007317 /* VIPER-Talk */,
 				0118436E246245D000007317 /* VIPER-TalkTests */,
@@ -106,6 +113,24 @@
 			path = Asset;
 			sourceTree = "<group>";
 		};
+		4D3799BDE7151F1C2536D2B6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B53ABB58D5063308DBAEC3B /* Pods-VIPER-Talk.debug.xcconfig */,
+				02CC5BB079CE6804555DD8D2 /* Pods-VIPER-Talk.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9D78A4B64F50203B6C17AEE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13631AD319274D9EA11157AA /* Pods_VIPER_Talk.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -113,10 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01184374246245D100007317 /* Build configuration list for PBXNativeTarget "VIPER-Talk" */;
 			buildPhases = (
+				7235968953B2BBF0135B5B3C /* [CP] Check Pods Manifest.lock */,
 				01184351246245CE00007317 /* Sources */,
 				01184352246245CE00007317 /* Frameworks */,
 				01184353246245CE00007317 /* Resources */,
 				017E0E072462474D007FCBC6 /* Swift Lint */,
+				187F876B80A36274FD9DC2F3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,6 +247,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		187F876B80A36274FD9DC2F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VIPER-Talk/Pods-VIPER-Talk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VIPER-Talk/Pods-VIPER-Talk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VIPER-Talk/Pods-VIPER-Talk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7235968953B2BBF0135B5B3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VIPER-Talk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -378,6 +444,7 @@
 		};
 		01184375246245D100007317 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B53ABB58D5063308DBAEC3B /* Pods-VIPER-Talk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -396,6 +463,7 @@
 		};
 		01184376246245D100007317 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02CC5BB079CE6804555DD8D2 /* Pods-VIPER-Talk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
