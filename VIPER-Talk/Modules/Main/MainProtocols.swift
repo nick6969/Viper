@@ -15,7 +15,7 @@ protocol MainRouterProtocol: AnyObject {
 
 // MARK: Presenter
 protocol MainPresenterProtocol: AnyObject {
-    //View -> Presenter
+    // View -> Presenter
 }
 
 // MARK: Interactor Input

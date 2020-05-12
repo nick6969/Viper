@@ -98,61 +98,13 @@
 		011210BF24627910009D0E45 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				011210C024627910009D0E45 /* Entity */,
-				011210C724627910009D0E45 /* Interactor */,
-				011210C124627910009D0E45 /* Presenter */,
-				011210C524627910009D0E45 /* Protocols */,
-				011210C924627910009D0E45 /* Router */,
-				011210C324627910009D0E45 /* View */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		011210C024627910009D0E45 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		011210C124627910009D0E45 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
+				011210C824627910009D0E45 /* MainInteractor.swift */,
 				011210C224627910009D0E45 /* MainPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		011210C324627910009D0E45 /* View */ = {
-			isa = PBXGroup;
-			children = (
+				011210C624627910009D0E45 /* MainProtocols.swift */,
+				011210CA24627910009D0E45 /* MainRouter.swift */,
 				011210C424627910009D0E45 /* MainViewController.swift */,
 			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		011210C524627910009D0E45 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				011210C624627910009D0E45 /* MainProtocols.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		011210C724627910009D0E45 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				011210C824627910009D0E45 /* MainInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		011210C924627910009D0E45 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				011210CA24627910009D0E45 /* MainRouter.swift */,
-			);
-			path = Router;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		0118434C246245CE00007317 = {
