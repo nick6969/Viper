@@ -16,6 +16,20 @@
 		01184362246245D000007317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01184361246245D000007317 /* Assets.xcassets */; };
 		01184365246245D000007317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01184363246245D000007317 /* LaunchScreen.storyboard */; };
 		01184370246245D100007317 /* VIPERTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0118436F246245D100007317 /* VIPERTalkTests.swift */; };
+		01573539246AECAE00036B6C /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01573538246AECAE00036B6C /* Protocol.swift */; };
+		0157353B246AED1700036B6C /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0157353A246AED1700036B6C /* HTTPClient.swift */; };
+		0157353D246AED8A00036B6C /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0157353C246AED8A00036B6C /* types.swift */; };
+		01573540246AEDD200036B6C /* ContentAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0157353F246AEDD200036B6C /* ContentAdapter.swift */; };
+		01573542246AEDDD00036B6C /* FormURLAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01573541246AEDDD00036B6C /* FormURLAdapter.swift */; };
+		01573544246AEDED00036B6C /* HeaderAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01573543246AEDED00036B6C /* HeaderAdapter.swift */; };
+		01573546246AEDFB00036B6C /* JSONRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01573545246AEDFB00036B6C /* JSONRequestAdapter.swift */; };
+		01573548246AEE0500036B6C /* NoneAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01573547246AEE0500036B6C /* NoneAdapter.swift */; };
+		0157354A246AEE1300036B6C /* QueryAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01573549246AEE1300036B6C /* QueryAdapter.swift */; };
+		0157354D246AEE2900036B6C /* RetryDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0157354C246AEE2900036B6C /* RetryDecision.swift */; };
+		0157354F246AEE3200036B6C /* StatusCodeDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0157354E246AEE3200036B6C /* StatusCodeDecision.swift */; };
+		01573551246AEE3D00036B6C /* DecodeJSONResultDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01573550246AEE3D00036B6C /* DecodeJSONResultDecision.swift */; };
+		01573553246AEE4F00036B6C /* MethodAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01573552246AEE4F00036B6C /* MethodAdapter.swift */; };
+		01573555246AEE8D00036B6C /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01573554246AEE8D00036B6C /* Errors.swift */; };
 		78556EF259BD5F2C2983E5A7 /* Pods_VIPER_Talk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13631AD319274D9EA11157AA /* Pods_VIPER_Talk.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +57,20 @@
 		0118436B246245D000007317 /* VIPER-TalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VIPER-TalkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0118436F246245D100007317 /* VIPERTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPERTalkTests.swift; sourceTree = "<group>"; };
 		01184371246245D100007317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01573538246AECAE00036B6C /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		0157353A246AED1700036B6C /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		0157353C246AED8A00036B6C /* types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = types.swift; sourceTree = "<group>"; };
+		0157353F246AEDD200036B6C /* ContentAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentAdapter.swift; sourceTree = "<group>"; };
+		01573541246AEDDD00036B6C /* FormURLAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormURLAdapter.swift; sourceTree = "<group>"; };
+		01573543246AEDED00036B6C /* HeaderAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAdapter.swift; sourceTree = "<group>"; };
+		01573545246AEDFB00036B6C /* JSONRequestAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRequestAdapter.swift; sourceTree = "<group>"; };
+		01573547246AEE0500036B6C /* NoneAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoneAdapter.swift; sourceTree = "<group>"; };
+		01573549246AEE1300036B6C /* QueryAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryAdapter.swift; sourceTree = "<group>"; };
+		0157354C246AEE2900036B6C /* RetryDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryDecision.swift; sourceTree = "<group>"; };
+		0157354E246AEE3200036B6C /* StatusCodeDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeDecision.swift; sourceTree = "<group>"; };
+		01573550246AEE3D00036B6C /* DecodeJSONResultDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeJSONResultDecision.swift; sourceTree = "<group>"; };
+		01573552246AEE4F00036B6C /* MethodAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodAdapter.swift; sourceTree = "<group>"; };
+		01573554246AEE8D00036B6C /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		02CC5BB079CE6804555DD8D2 /* Pods-VIPER-Talk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPER-Talk.release.xcconfig"; path = "Target Support Files/Pods-VIPER-Talk/Pods-VIPER-Talk.release.xcconfig"; sourceTree = "<group>"; };
 		13631AD319274D9EA11157AA /* Pods_VIPER_Talk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPER_Talk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B53ABB58D5063308DBAEC3B /* Pods-VIPER-Talk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPER-Talk.debug.xcconfig"; path = "Target Support Files/Pods-VIPER-Talk/Pods-VIPER-Talk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +198,43 @@
 			path = "VIPER-TalkTests";
 			sourceTree = "<group>";
 		};
+		014CF0B4246AEAB700C07333 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				0157353E246AEDC600036B6C /* Adapter */,
+				0157354B246AEE1D00036B6C /* Decision */,
+				01573554246AEE8D00036B6C /* Errors.swift */,
+				0157353A246AED1700036B6C /* HTTPClient.swift */,
+				01573538246AECAE00036B6C /* Protocol.swift */,
+				0157353C246AED8A00036B6C /* types.swift */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		0157353E246AEDC600036B6C /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				0157353F246AEDD200036B6C /* ContentAdapter.swift */,
+				01573541246AEDDD00036B6C /* FormURLAdapter.swift */,
+				01573543246AEDED00036B6C /* HeaderAdapter.swift */,
+				01573545246AEDFB00036B6C /* JSONRequestAdapter.swift */,
+				01573552246AEE4F00036B6C /* MethodAdapter.swift */,
+				01573547246AEE0500036B6C /* NoneAdapter.swift */,
+				01573549246AEE1300036B6C /* QueryAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		0157354B246AEE1D00036B6C /* Decision */ = {
+			isa = PBXGroup;
+			children = (
+				01573550246AEE3D00036B6C /* DecodeJSONResultDecision.swift */,
+				0157354C246AEE2900036B6C /* RetryDecision.swift */,
+				0157354E246AEE3200036B6C /* StatusCodeDecision.swift */,
+			);
+			path = Decision;
+			sourceTree = "<group>";
+		};
 		017E0E08246248B1007FCBC6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +269,7 @@
 		017E0E1E2462669D007FCBC6 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				014CF0B4246AEAB700C07333 /* WebService */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -389,11 +455,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				01184359246245CE00007317 /* AppDelegate.swift in Sources */,
+				01573540246AEDD200036B6C /* ContentAdapter.swift in Sources */,
+				01573551246AEE3D00036B6C /* DecodeJSONResultDecision.swift in Sources */,
+				01573555246AEE8D00036B6C /* Errors.swift in Sources */,
+				01573542246AEDDD00036B6C /* FormURLAdapter.swift in Sources */,
+				01573544246AEDED00036B6C /* HeaderAdapter.swift in Sources */,
+				0157353B246AED1700036B6C /* HTTPClient.swift in Sources */,
+				01573546246AEDFB00036B6C /* JSONRequestAdapter.swift in Sources */,
 				011210CE24627910009D0E45 /* MainInteractor.swift in Sources */,
 				011210CB24627910009D0E45 /* MainPresenter.swift in Sources */,
 				011210CD24627910009D0E45 /* MainProtocols.swift in Sources */,
 				011210CF24627910009D0E45 /* MainRouter.swift in Sources */,
 				011210CC24627910009D0E45 /* MainViewController.swift in Sources */,
+				01573553246AEE4F00036B6C /* MethodAdapter.swift in Sources */,
+				01573548246AEE0500036B6C /* NoneAdapter.swift in Sources */,
+				01573539246AECAE00036B6C /* Protocol.swift in Sources */,
+				0157354A246AEE1300036B6C /* QueryAdapter.swift in Sources */,
+				0157354D246AEE2900036B6C /* RetryDecision.swift in Sources */,
+				0157354F246AEE3200036B6C /* StatusCodeDecision.swift in Sources */,
+				0157353D246AED8A00036B6C /* types.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
