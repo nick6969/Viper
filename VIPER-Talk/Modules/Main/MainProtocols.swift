@@ -11,11 +11,15 @@ import Foundation
 // MARK: Router
 protocol MainRouterProtocol: AnyObject {
     // Presenter -> Router
+    func pushToSignIn()
+    func pushToSignUp()
 }
 
 // MARK: Presenter
 protocol MainPresenterProtocol: AnyObject {
     // View -> Presenter
+    func pushToSignIn()
+    func pushToSignUp()
 }
 
 // MARK: Interactor Input

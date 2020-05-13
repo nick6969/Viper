@@ -19,6 +19,14 @@ final class MainPresenter: MainPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
+    
+    func pushToSignIn() {
+        router.pushToSignIn()
+    }
+    
+    func pushToSignUp() {
+        router.pushToSignIn()
+    }
 }
 
 extension MainPresenter: MainOutputInteractorProtocol {

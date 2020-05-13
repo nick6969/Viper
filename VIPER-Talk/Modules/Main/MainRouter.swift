@@ -24,4 +24,16 @@ final class MainRouter: MainRouterProtocol {
         
         return view
     }
+    
+    func pushToSignIn() {
+        let signInModule = SignInRouter.createModule()
+        viewController?.navigationController?.pushViewController(signInModule, animated: true)
+    }
+    
+    func pushToSignUp() {
+        let signUpModule = SignUpRouter.createModule()
+        viewController?.navigationController?.pushViewController(signUpModule, animated: true)
+
+    }
+    
 }
