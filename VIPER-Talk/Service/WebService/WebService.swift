@@ -48,46 +48,51 @@ final class WebService {
     }
     
     func getBranch(success: ModelSuccessClosure<[BranchModel]>?, failure: ErrorClosure?) {
-        do {
-            let dic = try getDic(name: "branch")
-            guard let array = dic["data"] as? [Any] else {
-                failure?(ApiError.fileContentNoCorrect)
-                return
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+            do {
+                let dic = try self.getDic(name: "branch")
+                guard let array = dic["data"] as? [Any] else {
+                    failure?(ApiError.fileContentNoCorrect)
+                    return
+                }
+                let models = try self.arrayToModel(array: array)
+                success?(models)
+            } catch {
+                failure?(error)
             }
-            let models = try arrayToModel(array: array)
-            success?(models)
-        } catch {
-            failure?(error)
         }
     }
     
     func getCategoryWith(id: String, success: ModelSuccessClosure<[BranchModel]>?, failure: ErrorClosure?) {
-        do {
-            let dic = try getDic(name: "category")
-            guard let key = dic[id] as? [String: Any], let array = key["data"] as? [Any] else {
-                failure?(ApiError.fileContentNoCorrect)
-                return
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+            do {
+                let dic = try self.getDic(name: "category")
+                guard let key = dic[id] as? [String: Any], let array = key["data"] as? [Any] else {
+                    failure?(ApiError.fileContentNoCorrect)
+                    return
+                }
+                let models = try self.arrayToModel(array: array)
+                success?(models)
+            } catch {
+                failure?(error)
             }
-            let models = try arrayToModel(array: array)
-            success?(models)
-        } catch {
-            failure?(error)
         }
     }
     
     func getSmallCategoryWith(id: String, success: ModelSuccessClosure<[BranchModel]>?, failure: ErrorClosure?) {
-        do {
-            let dic = try getDic(name: "smallCategory")
-            guard let key = dic[id] as? [String: Any], let array = key["data"] as? [Any] else {
-                failure?(ApiError.fileContentNoCorrect)
-                return
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+            do {
+                let dic = try self.getDic(name: "smallCategory")
+                guard let key = dic[id] as? [String: Any], let array = key["data"] as? [Any] else {
+                    failure?(ApiError.fileContentNoCorrect)
+                    return
+                }
+                let models = try self.arrayToModel(array: array)
+                success?(models)
+            } catch {
+                failure?(error)
             }
-            let models = try arrayToModel(array: array)
-            success?(models)
-        } catch {
-            failure?(error)
         }
-        
     }
 }
 
