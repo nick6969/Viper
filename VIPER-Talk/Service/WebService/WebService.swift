@@ -47,11 +47,81 @@ final class WebService {
         
     }
     
+    func getBranch(success: ModelSuccessClosure<[BranchModel]>?, failure: ErrorClosure?) {
+        do {
+            let dic = try getDic(name: "branch")
+            guard let array = dic["data"] as? [Any] else {
+                failure?(ApiError.fileContentNoCorrect)
+                return
+            }
+            let models = try arrayToModel(array: array)
+            success?(models)
+        } catch {
+            failure?(error)
+        }
+    }
+    
+    func getCategoryWith(id: String, success: ModelSuccessClosure<[BranchModel]>?, failure: ErrorClosure?) {
+        do {
+            let dic = try getDic(name: "category")
+            guard let key = dic[id] as? [String: Any], let array = key["data"] as? [Any] else {
+                failure?(ApiError.fileContentNoCorrect)
+                return
+            }
+            let models = try arrayToModel(array: array)
+            success?(models)
+        } catch {
+            failure?(error)
+        }
+    }
+    
+    func getSmallCategoryWith(id: String, success: ModelSuccessClosure<[BranchModel]>?, failure: ErrorClosure?) {
+        do {
+            let dic = try getDic(name: "smallCategory")
+            guard let key = dic[id] as? [String: Any], let array = key["data"] as? [Any] else {
+                failure?(ApiError.fileContentNoCorrect)
+                return
+            }
+            let models = try arrayToModel(array: array)
+            success?(models)
+        } catch {
+            failure?(error)
+        }
+        
+    }
+}
+
+extension WebService {
+    private
+    func getDic(name: String) throws -> [String: Any] {
+        guard let fileUrl = Bundle.main.url(forResource: name, withExtension: "json") else {
+            throw ApiError.loadFileError
+        }
+        let json = try Data(contentsOf: fileUrl)
+        guard let dic = try JSONSerialization.jsonObject(with: json, options: .mutableContainers) as? [String: Any] else {
+            throw ApiError.fileContentNoCorrect
+        }
+        return dic
+    }
+    
+    private
+    func arrayToModel(array: [Any]) throws -> [BranchModel] {
+        let data = try JSONSerialization.data(withJSONObject: array, options: .prettyPrinted)
+        let models = try JSONDecoder().decode([BranchModel].self, from: data)
+        return models
+    }
+}
+
+struct BranchModel: Codable {
+    let id: String
+    let name: String
 }
 
 enum ApiError: Swift.Error {
     case userNotFound
     case userNameDuplicate
+    case loadFileError
+    case fileContentNoCorrect
 }
 
 extension ApiError: LocalizedError {
@@ -61,6 +131,10 @@ extension ApiError: LocalizedError {
             return "can't find user, please check your username and password."
         case .userNameDuplicate:
             return "username is duplicate, please choose other one."
+        case .loadFileError:
+            return "can't find json file."
+        case .fileContentNoCorrect:
+            return "file content is not correct."
         }
     }
 }
