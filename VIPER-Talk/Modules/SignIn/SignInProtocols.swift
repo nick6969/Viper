@@ -17,7 +17,7 @@ protocol SignInRouterProtocol: AnyObject {
 // MARK: Presenter
 protocol SignInPresenterProtocol: AnyObject {
     // View -> Presenter
-    func confirm(name: String?, password: String?)
+    func send(name: String?, password: String?)
 }
 
 // MARK: Interactor Input
@@ -25,7 +25,7 @@ protocol SignInInputInteractorProtocol: AnyObject {
     var presenter: SignInOutputInteractorProtocol? { get set }
     
     // Presenter -> Interactor
-    func signIn(name: String, password: String)
+    func signIn(name: String?, password: String?)
 }
 
 // MARK: Interactor Output
@@ -43,5 +43,5 @@ protocol SignInViewProtocol: AnyObject {
     func showLoading()
     func dismissLoading()
     
-    func showError(message: String)
+    func showMessage(_ message: String)
 }

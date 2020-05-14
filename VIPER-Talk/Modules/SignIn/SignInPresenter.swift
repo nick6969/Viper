@@ -25,23 +25,8 @@ final class SignInPresenter {
 // View -> Presenter
 extension SignInPresenter: SignInPresenterProtocol {
     
-    func confirm(name: String?, password: String?) {
-        guard let name = name, let password = password else {
-            view?.showError(message: ErrorMessage.signIn001)
-            return
-        }
-        guard name.validate(with: .username) else {
-            view?.showError(message: ErrorMessage.signIn002)
-            return
-        }
-        
-        guard password.validate(with: .password) else {
-            view?.showError(message: ErrorMessage.signIn003)
-            return
-        }
-        
+    func send(name: String?, password: String?) {
         view?.showLoading()
-        
         interactor.signIn(name: name, password: password)
     }
 
@@ -58,7 +43,7 @@ extension SignInPresenter: SignInOutputInteractorProtocol {
     func signInFailure(error: Error?) {
         let message: String = error?.localizedDescription ?? "unKnow Error."
         view?.dismissLoading()
-        view?.showError(message: message)
+        view?.showMessage(message)
     }
 
 }

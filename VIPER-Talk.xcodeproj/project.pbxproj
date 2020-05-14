@@ -18,7 +18,6 @@
 		017D09A2246BE9F30032DEEB /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D099C246BE9F30032DEEB /* SignInInteractor.swift */; };
 		017D09A6246C54D60032DEEB /* AlertHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D09A5246C54D60032DEEB /* AlertHelp.swift */; };
 		017D09A9246CB4540032DEEB /* ValidateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D09A8246CB4540032DEEB /* ValidateType.swift */; };
-		017D09AC246CB4F80032DEEB /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D09AB246CB4F80032DEEB /* ErrorMessage.swift */; };
 		017D09F0246CBE1E0032DEEB /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D09EA246CBE1E0032DEEB /* MainPresenter.swift */; };
 		017D09F1246CBE1E0032DEEB /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D09EB246CBE1E0032DEEB /* MainRouter.swift */; };
 		017D09F2246CBE1E0032DEEB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D09EC246CBE1E0032DEEB /* MainViewController.swift */; };
@@ -55,7 +54,6 @@
 		017D099C246BE9F30032DEEB /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		017D09A5246C54D60032DEEB /* AlertHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelp.swift; sourceTree = "<group>"; };
 		017D09A8246CB4540032DEEB /* ValidateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateType.swift; sourceTree = "<group>"; };
-		017D09AB246CB4F80032DEEB /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		017D09EA246CBE1E0032DEEB /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		017D09EB246CBE1E0032DEEB /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		017D09EC246CBE1E0032DEEB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -178,14 +176,6 @@
 			path = Validate;
 			sourceTree = "<group>";
 		};
-		017D09AA246CB4E80032DEEB /* ErrorMessage */ = {
-			isa = PBXGroup;
-			children = (
-				017D09AB246CB4F80032DEEB /* ErrorMessage.swift */,
-			);
-			path = ErrorMessage;
-			sourceTree = "<group>";
-		};
 		017E0E08246248B1007FCBC6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				017D09A4246C54B60032DEEB /* AlertHelp */,
-				017D09AA246CB4E80032DEEB /* ErrorMessage */,
 				017D09A7246CB44B0032DEEB /* Validate */,
 				014CF0B4246AEAB700C07333 /* WebService */,
 			);
@@ -412,7 +401,6 @@
 			files = (
 				017D09A6246C54D60032DEEB /* AlertHelp.swift in Sources */,
 				01184359246245CE00007317 /* AppDelegate.swift in Sources */,
-				017D09AC246CB4F80032DEEB /* ErrorMessage.swift in Sources */,
 				017D09F4246CBE1E0032DEEB /* MainInteractor.swift in Sources */,
 				017D09F0246CBE1E0032DEEB /* MainPresenter.swift in Sources */,
 				017D09F3246CBE1E0032DEEB /* MainProtocols.swift in Sources */,
@@ -579,6 +567,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DZBBP5D6DJ;
 				INFOPLIST_FILE = "VIPER-Talk/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -598,6 +587,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DZBBP5D6DJ;
 				INFOPLIST_FILE = "VIPER-Talk/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -17,8 +17,23 @@ final class SignInInteractor {
 // Presenter -> Interactor
 extension SignInInteractor: SignInInputInteractorProtocol {
 
-    func signIn(name: String, password: String) {
+    func signIn(name: String?, password: String?) {
 
+        guard let name = name, let password = password else {
+            self.presenter?.signInFailure(error: SignInError.inputEmpty)
+            return
+        }
+        
+        guard name.validate(with: .username) else {
+            self.presenter?.signInFailure(error: SignInError.usernameNoCorrect)
+            return
+        }
+        
+        guard password.validate(with: .password) else {
+            self.presenter?.signInFailure(error: SignInError.passwordNoCorrect)
+            return
+        }
+        
         WebService.shared.signIn(name: name, password: password, success: { [weak self] in
             DispatchQueue.main.async {
                 self?.presenter?.signInSuccess()
@@ -31,4 +46,23 @@ extension SignInInteractor: SignInInputInteractorProtocol {
 
     }
 
+}
+
+enum SignInError: Swift.Error {
+    case inputEmpty
+    case usernameNoCorrect
+    case passwordNoCorrect
+}
+
+extension SignInError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .inputEmpty:
+            return "input info is empty."
+        case .usernameNoCorrect:
+            return "input username noCorrect."
+        case .passwordNoCorrect:
+            return "input password noCorrect."
+        }
+    }
 }

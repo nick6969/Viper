@@ -59,7 +59,11 @@ final class SignInViewController: UIViewController {
     @objc
     private
     func didTap(confirm button: UIButton) {
-        presenter?.confirm(name: usernameTextField.text, password: passwordTextField.text)
+        
+        presenter?.send(
+            name: usernameTextField.text,
+            password: passwordTextField.text
+        )
     }
     
 }
@@ -75,7 +79,7 @@ extension SignInViewController: SignInViewProtocol {
         view.hiddenProgress()
     }
     
-    func showError(message: String) {
+    func showMessage(_ message: String) {
         AlertHelper.shared.show(title: message)
     }
 
