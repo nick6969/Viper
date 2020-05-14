@@ -25,6 +25,9 @@
 		017D09F4246CBE1E0032DEEB /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D09EE246CBE1E0032DEEB /* MainInteractor.swift */; };
 		017D09F7246CC6CB0032DEEB /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D09F6246CC6CB0032DEEB /* ProgressIndicator.swift */; };
 		017D0A06246CCE600032DEEB /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D0A05246CCE600032DEEB /* WebService.swift */; };
+		01B95DD2246D303400D896D1 /* category.json in Resources */ = {isa = PBXBuildFile; fileRef = 01B95DCF246D303400D896D1 /* category.json */; };
+		01B95DD3246D303400D896D1 /* branch.json in Resources */ = {isa = PBXBuildFile; fileRef = 01B95DD0246D303400D896D1 /* branch.json */; };
+		01B95DD4246D303400D896D1 /* smallCategory.json in Resources */ = {isa = PBXBuildFile; fileRef = 01B95DD1246D303400D896D1 /* smallCategory.json */; };
 		78556EF259BD5F2C2983E5A7 /* Pods_VIPER_Talk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13631AD319274D9EA11157AA /* Pods_VIPER_Talk.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +64,9 @@
 		017D09EE246CBE1E0032DEEB /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		017D09F6246CC6CB0032DEEB /* ProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
 		017D0A05246CCE600032DEEB /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		01B95DCF246D303400D896D1 /* category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = category.json; sourceTree = "<group>"; };
+		01B95DD0246D303400D896D1 /* branch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = branch.json; sourceTree = "<group>"; };
+		01B95DD1246D303400D896D1 /* smallCategory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = smallCategory.json; sourceTree = "<group>"; };
 		02CC5BB079CE6804555DD8D2 /* Pods-VIPER-Talk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPER-Talk.release.xcconfig"; path = "Target Support Files/Pods-VIPER-Talk/Pods-VIPER-Talk.release.xcconfig"; sourceTree = "<group>"; };
 		13631AD319274D9EA11157AA /* Pods_VIPER_Talk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPER_Talk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B53ABB58D5063308DBAEC3B /* Pods-VIPER-Talk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPER-Talk.debug.xcconfig"; path = "Target Support Files/Pods-VIPER-Talk/Pods-VIPER-Talk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +149,9 @@
 		014CF0B4246AEAB700C07333 /* WebService */ = {
 			isa = PBXGroup;
 			children = (
+				01B95DD0246D303400D896D1 /* branch.json */,
+				01B95DCF246D303400D896D1 /* category.json */,
+				01B95DD1246D303400D896D1 /* smallCategory.json */,
 				017D0A05246CCE600032DEEB /* WebService.swift */,
 			);
 			path = WebService;
@@ -321,7 +330,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				01184362246245D000007317 /* Assets.xcassets in Resources */,
+				01B95DD3246D303400D896D1 /* branch.json in Resources */,
+				01B95DD2246D303400D896D1 /* category.json in Resources */,
 				01184365246245D000007317 /* LaunchScreen.storyboard in Resources */,
+				01B95DD4246D303400D896D1 /* smallCategory.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

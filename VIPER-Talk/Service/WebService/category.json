@@ -1,0 +1,50 @@
+{
+    "1": {
+        "data": [
+            {
+                "id": "100",
+                "name": "Beading & Jewelry Making"
+            },
+            {
+                "id": "101",
+                "name": "Crafting"
+            },
+            {
+                "id": "102",
+                "name": "Gift Wrapping Supplies"
+            }
+        ]
+    },
+    "2": {
+        "data": [
+            {
+                "id": "200",
+                "name": "Car Care"
+            },
+            {
+                "id": "201",
+                "name": "Car Electronics & Accessories"
+            },
+            {
+                "id": "202",
+                "name": "Exterior Accessories"
+            }
+        ]
+    },
+    "3": {
+        "data": [
+            {
+                "id": "300",
+                "name": "Activity & Entertainment"
+            },
+            {
+                "id": "301",
+                "name": "Apparel & Accessories"
+            },
+            {
+                "id": "302",
+                "name": "Baby & Toddler Toys"
+            }
+        ]
+    }
+}
