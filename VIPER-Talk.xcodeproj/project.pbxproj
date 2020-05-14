@@ -11,20 +11,6 @@
 		01184362246245D000007317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01184361246245D000007317 /* Assets.xcassets */; };
 		01184365246245D000007317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01184363246245D000007317 /* LaunchScreen.storyboard */; };
 		01184370246245D100007317 /* VIPERTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0118436F246245D100007317 /* VIPERTalkTests.swift */; };
-		01573539246AECAE00036B6C /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01573538246AECAE00036B6C /* Protocol.swift */; };
-		0157353B246AED1700036B6C /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0157353A246AED1700036B6C /* HTTPClient.swift */; };
-		0157353D246AED8A00036B6C /* types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0157353C246AED8A00036B6C /* types.swift */; };
-		01573540246AEDD200036B6C /* ContentAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0157353F246AEDD200036B6C /* ContentAdapter.swift */; };
-		01573542246AEDDD00036B6C /* FormURLAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01573541246AEDDD00036B6C /* FormURLAdapter.swift */; };
-		01573544246AEDED00036B6C /* HeaderAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01573543246AEDED00036B6C /* HeaderAdapter.swift */; };
-		01573546246AEDFB00036B6C /* JSONRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01573545246AEDFB00036B6C /* JSONRequestAdapter.swift */; };
-		01573548246AEE0500036B6C /* NoneAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01573547246AEE0500036B6C /* NoneAdapter.swift */; };
-		0157354A246AEE1300036B6C /* QueryAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01573549246AEE1300036B6C /* QueryAdapter.swift */; };
-		0157354D246AEE2900036B6C /* RetryDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0157354C246AEE2900036B6C /* RetryDecision.swift */; };
-		0157354F246AEE3200036B6C /* StatusCodeDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0157354E246AEE3200036B6C /* StatusCodeDecision.swift */; };
-		01573551246AEE3D00036B6C /* DecodeJSONResultDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01573550246AEE3D00036B6C /* DecodeJSONResultDecision.swift */; };
-		01573553246AEE4F00036B6C /* MethodAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01573552246AEE4F00036B6C /* MethodAdapter.swift */; };
-		01573555246AEE8D00036B6C /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01573554246AEE8D00036B6C /* Errors.swift */; };
 		017D099E246BE9F30032DEEB /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D0998246BE9F30032DEEB /* SignInPresenter.swift */; };
 		017D099F246BE9F30032DEEB /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D0999246BE9F30032DEEB /* SignInRouter.swift */; };
 		017D09A0246BE9F30032DEEB /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D099A246BE9F30032DEEB /* SignInViewController.swift */; };
@@ -61,20 +47,6 @@
 		0118436B246245D000007317 /* VIPER-TalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VIPER-TalkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0118436F246245D100007317 /* VIPERTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPERTalkTests.swift; sourceTree = "<group>"; };
 		01184371246245D100007317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		01573538246AECAE00036B6C /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
-		0157353A246AED1700036B6C /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		0157353C246AED8A00036B6C /* types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = types.swift; sourceTree = "<group>"; };
-		0157353F246AEDD200036B6C /* ContentAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentAdapter.swift; sourceTree = "<group>"; };
-		01573541246AEDDD00036B6C /* FormURLAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormURLAdapter.swift; sourceTree = "<group>"; };
-		01573543246AEDED00036B6C /* HeaderAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAdapter.swift; sourceTree = "<group>"; };
-		01573545246AEDFB00036B6C /* JSONRequestAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRequestAdapter.swift; sourceTree = "<group>"; };
-		01573547246AEE0500036B6C /* NoneAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoneAdapter.swift; sourceTree = "<group>"; };
-		01573549246AEE1300036B6C /* QueryAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryAdapter.swift; sourceTree = "<group>"; };
-		0157354C246AEE2900036B6C /* RetryDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryDecision.swift; sourceTree = "<group>"; };
-		0157354E246AEE3200036B6C /* StatusCodeDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeDecision.swift; sourceTree = "<group>"; };
-		01573550246AEE3D00036B6C /* DecodeJSONResultDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeJSONResultDecision.swift; sourceTree = "<group>"; };
-		01573552246AEE4F00036B6C /* MethodAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodAdapter.swift; sourceTree = "<group>"; };
-		01573554246AEE8D00036B6C /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		017D0998246BE9F30032DEEB /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		017D0999246BE9F30032DEEB /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
 		017D099A246BE9F30032DEEB /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -171,38 +143,8 @@
 		014CF0B4246AEAB700C07333 /* WebService */ = {
 			isa = PBXGroup;
 			children = (
-				0157353E246AEDC600036B6C /* Adapter */,
-				0157354B246AEE1D00036B6C /* Decision */,
-				01573554246AEE8D00036B6C /* Errors.swift */,
-				0157353A246AED1700036B6C /* HTTPClient.swift */,
-				01573538246AECAE00036B6C /* Protocol.swift */,
-				0157353C246AED8A00036B6C /* types.swift */,
 			);
 			path = WebService;
-			sourceTree = "<group>";
-		};
-		0157353E246AEDC600036B6C /* Adapter */ = {
-			isa = PBXGroup;
-			children = (
-				0157353F246AEDD200036B6C /* ContentAdapter.swift */,
-				01573541246AEDDD00036B6C /* FormURLAdapter.swift */,
-				01573543246AEDED00036B6C /* HeaderAdapter.swift */,
-				01573545246AEDFB00036B6C /* JSONRequestAdapter.swift */,
-				01573552246AEE4F00036B6C /* MethodAdapter.swift */,
-				01573547246AEE0500036B6C /* NoneAdapter.swift */,
-				01573549246AEE1300036B6C /* QueryAdapter.swift */,
-			);
-			path = Adapter;
-			sourceTree = "<group>";
-		};
-		0157354B246AEE1D00036B6C /* Decision */ = {
-			isa = PBXGroup;
-			children = (
-				01573550246AEE3D00036B6C /* DecodeJSONResultDecision.swift */,
-				0157354C246AEE2900036B6C /* RetryDecision.swift */,
-				0157354E246AEE3200036B6C /* StatusCodeDecision.swift */,
-			);
-			path = Decision;
 			sourceTree = "<group>";
 		};
 		017D0997246BE9E40032DEEB /* SignIn */ = {
@@ -467,32 +409,18 @@
 			files = (
 				017D09A6246C54D60032DEEB /* AlertHelp.swift in Sources */,
 				01184359246245CE00007317 /* AppDelegate.swift in Sources */,
-				01573540246AEDD200036B6C /* ContentAdapter.swift in Sources */,
-				01573551246AEE3D00036B6C /* DecodeJSONResultDecision.swift in Sources */,
 				017D09AC246CB4F80032DEEB /* ErrorMessage.swift in Sources */,
-				01573555246AEE8D00036B6C /* Errors.swift in Sources */,
-				01573542246AEDDD00036B6C /* FormURLAdapter.swift in Sources */,
-				01573544246AEDED00036B6C /* HeaderAdapter.swift in Sources */,
-				0157353B246AED1700036B6C /* HTTPClient.swift in Sources */,
-				01573546246AEDFB00036B6C /* JSONRequestAdapter.swift in Sources */,
 				017D09F4246CBE1E0032DEEB /* MainInteractor.swift in Sources */,
 				017D09F0246CBE1E0032DEEB /* MainPresenter.swift in Sources */,
 				017D09F3246CBE1E0032DEEB /* MainProtocols.swift in Sources */,
 				017D09F1246CBE1E0032DEEB /* MainRouter.swift in Sources */,
 				017D09F2246CBE1E0032DEEB /* MainViewController.swift in Sources */,
-				01573553246AEE4F00036B6C /* MethodAdapter.swift in Sources */,
-				01573548246AEE0500036B6C /* NoneAdapter.swift in Sources */,
 				017D09F7246CC6CB0032DEEB /* ProgressIndicator.swift in Sources */,
-				01573539246AECAE00036B6C /* Protocol.swift in Sources */,
-				0157354A246AEE1300036B6C /* QueryAdapter.swift in Sources */,
-				0157354D246AEE2900036B6C /* RetryDecision.swift in Sources */,
 				017D09A2246BE9F30032DEEB /* SignInInteractor.swift in Sources */,
 				017D099E246BE9F30032DEEB /* SignInPresenter.swift in Sources */,
 				017D09A1246BE9F30032DEEB /* SignInProtocols.swift in Sources */,
 				017D099F246BE9F30032DEEB /* SignInRouter.swift in Sources */,
 				017D09A0246BE9F30032DEEB /* SignInViewController.swift in Sources */,
-				0157354F246AEE3200036B6C /* StatusCodeDecision.swift in Sources */,
-				0157353D246AED8A00036B6C /* types.swift in Sources */,
 				017D09A9246CB4540032DEEB /* ValidateType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
