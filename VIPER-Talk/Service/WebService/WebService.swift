@@ -32,10 +32,26 @@ final class WebService {
         
     }
     
+    func signUp(name: String,
+                password: String,
+                success: EmptySuccessClosure?,
+                failure: ErrorClosure?) {
+        
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+            if Int64(Date().timeIntervalSince1970) % 2 == 0 {
+                success?()
+            } else {
+                failure?(ApiError.userNameDuplicate)
+            }
+        }
+        
+    }
+    
 }
 
 enum ApiError: Swift.Error {
     case userNotFound
+    case userNameDuplicate
 }
 
 extension ApiError: LocalizedError {
@@ -43,6 +59,8 @@ extension ApiError: LocalizedError {
         switch self {
         case .userNotFound:
             return "can't find user, please check your username and password."
+        case .userNameDuplicate:
+            return "username is duplicate, please choose other one."
         }
     }
 }
