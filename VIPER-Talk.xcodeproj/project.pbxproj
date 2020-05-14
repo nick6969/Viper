@@ -25,6 +25,7 @@
 		017D09F3246CBE1E0032DEEB /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D09ED246CBE1E0032DEEB /* MainProtocols.swift */; };
 		017D09F4246CBE1E0032DEEB /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D09EE246CBE1E0032DEEB /* MainInteractor.swift */; };
 		017D09F7246CC6CB0032DEEB /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D09F6246CC6CB0032DEEB /* ProgressIndicator.swift */; };
+		017D0A06246CCE600032DEEB /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D0A05246CCE600032DEEB /* WebService.swift */; };
 		78556EF259BD5F2C2983E5A7 /* Pods_VIPER_Talk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13631AD319274D9EA11157AA /* Pods_VIPER_Talk.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		017D09ED246CBE1E0032DEEB /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
 		017D09EE246CBE1E0032DEEB /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		017D09F6246CC6CB0032DEEB /* ProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
+		017D0A05246CCE600032DEEB /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		02CC5BB079CE6804555DD8D2 /* Pods-VIPER-Talk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPER-Talk.release.xcconfig"; path = "Target Support Files/Pods-VIPER-Talk/Pods-VIPER-Talk.release.xcconfig"; sourceTree = "<group>"; };
 		13631AD319274D9EA11157AA /* Pods_VIPER_Talk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPER_Talk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B53ABB58D5063308DBAEC3B /* Pods-VIPER-Talk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPER-Talk.debug.xcconfig"; path = "Target Support Files/Pods-VIPER-Talk/Pods-VIPER-Talk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		014CF0B4246AEAB700C07333 /* WebService */ = {
 			isa = PBXGroup;
 			children = (
+				017D0A05246CCE600032DEEB /* WebService.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				017D099F246BE9F30032DEEB /* SignInRouter.swift in Sources */,
 				017D09A0246BE9F30032DEEB /* SignInViewController.swift in Sources */,
 				017D09A9246CB4540032DEEB /* ValidateType.swift in Sources */,
+				017D0A06246CCE600032DEEB /* WebService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

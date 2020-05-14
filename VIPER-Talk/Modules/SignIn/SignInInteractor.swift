@@ -18,7 +18,17 @@ final class SignInInteractor {
 extension SignInInteractor: SignInInputInteractorProtocol {
 
     func signIn(name: String, password: String) {
-        // TODO: - Call Api
+
+        WebService.shared.signIn(name: name, password: password, success: { [weak self] in
+            DispatchQueue.main.async {
+                self?.presenter?.signInSuccess()
+            }
+        }, failure: { [weak self] error in
+            DispatchQueue.main.async {
+                self?.presenter?.signInFailure(error: error)
+            }
+        })
+
     }
 
 }
