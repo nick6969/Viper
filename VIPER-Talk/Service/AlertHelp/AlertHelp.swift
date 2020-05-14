@@ -25,6 +25,12 @@ struct AlertAction {
     var handler: (() -> Void)?
 }
 
+extension AlertAction {
+    static var okAction: AlertAction {
+        return AlertAction(title: "OK", style: .default, handler: nil)
+    }
+}
+
 extension UIAlertController {
     
     convenience init(title: String?, message: String?, customStyle: AlertControllerStyle) {
@@ -82,7 +88,7 @@ final class AlertHelper {
     func show(title: String?,
               message: String? = nil,
               style: AlertControllerStyle = .alert,
-              actions: [AlertAction]) {
+              actions: [AlertAction] = [.okAction]) {
         DispatchQueue.main.async {
             UIAlertController(title: title,
                               message: message,

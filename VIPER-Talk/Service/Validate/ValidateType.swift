@@ -8,6 +8,7 @@
 
 import Foundation
 
+// swiftlint:disable line_length
 enum ValidateType: String {
     
     case username = "^([\\w.]{4,30})"

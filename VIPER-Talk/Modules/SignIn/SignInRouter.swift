@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SignInRouter: SignInRouterProtocol {
+final class SignInRouter {
     
     weak var viewController: UIViewController?
     
@@ -24,4 +24,13 @@ final class SignInRouter: SignInRouterProtocol {
         
         return view
     }
+}
+
+// Presenter -> Router
+extension SignInRouter: SignInRouterProtocol {
+
+    func changeToHomeModule() {
+        // TODO: - move screen to home
+    }
+    
 }

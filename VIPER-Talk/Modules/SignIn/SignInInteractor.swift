@@ -8,8 +8,17 @@
 
 import Foundation
 
-final class SignInInteractor: SignInInputInteractorProtocol {
+final class SignInInteractor {
     
     var presenter: SignInOutputInteractorProtocol?
     
+}
+
+// Presenter -> Interactor
+extension SignInInteractor: SignInInputInteractorProtocol {
+
+    func signIn(name: String, password: String) {
+        // TODO: - Call Api
+    }
+
 }

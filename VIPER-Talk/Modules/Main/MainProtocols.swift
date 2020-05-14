@@ -2,7 +2,7 @@
 //  MainProtocols.swift
 //  VIPER-Talk
 //
-//  Created by Nick on 5/6/20.
+//  Created by Nick on 5/14/20.
 //  Copyright © 2020 co.Kcin.Nil. All rights reserved.
 //
 
@@ -24,8 +24,9 @@ protocol MainPresenterProtocol: AnyObject {
 
 // MARK: Interactor Input
 protocol MainInputInteractorProtocol: AnyObject {
-    // Presenter -> Interactor
     var presenter: MainOutputInteractorProtocol? { get set }
+
+    // Presenter -> Interactor
 }
 
 // MARK: Interactor Output
@@ -35,6 +36,7 @@ protocol MainOutputInteractorProtocol: AnyObject {
 
 // MARK: View
 protocol MainViewProtocol: AnyObject {
-    // PRESENTER -> VIEW
     var presenter: MainPresenterProtocol? { get set }
+    
+    // PRESENTER -> VIEW
 }

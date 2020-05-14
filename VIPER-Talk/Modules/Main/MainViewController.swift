@@ -2,13 +2,13 @@
 //  MainViewController.swift
 //  VIPER-Talk
 //
-//  Created by Nick on 5/6/20.
+//  Created by Nick on 5/14/20.
 //  Copyright © 2020 co.Kcin.Nil. All rights reserved.
 //
 
 import UIKit
 
-final class MainViewController: UIViewController, MainViewProtocol {
+final class MainViewController: UIViewController {
     
     var presenter: MainPresenterProtocol?
     
@@ -36,7 +36,7 @@ final class MainViewController: UIViewController, MainViewProtocol {
         stackView.addArrangedSubview(self.signUpButton)
         return stackView
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,10 +52,15 @@ final class MainViewController: UIViewController, MainViewProtocol {
         case signInButton:
             presenter?.pushToSignIn()
         case signUpButton:
-            presenter?.pushToSignIn()
+            presenter?.pushToSignUp()
         default:
             break
         }
     }
-    
+
+}
+
+// PRESENTER -> VIEW
+extension MainViewController: MainViewProtocol {
+
 }

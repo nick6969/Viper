@@ -2,13 +2,13 @@
 //  MainRouter.swift
 //  VIPER-Talk
 //
-//  Created by Nick on 5/6/20.
+//  Created by Nick on 5/14/20.
 //  Copyright © 2020 co.Kcin.Nil. All rights reserved.
 //
 
 import UIKit
 
-final class MainRouter: MainRouterProtocol {
+final class MainRouter {
     
     weak var viewController: UIViewController?
     
@@ -24,16 +24,18 @@ final class MainRouter: MainRouterProtocol {
         
         return view
     }
-    
+}
+
+// Presenter -> Router
+extension MainRouter: MainRouterProtocol {
+
     func pushToSignIn() {
         let signInModule = SignInRouter.createModule()
         viewController?.navigationController?.pushViewController(signInModule, animated: true)
     }
     
     func pushToSignUp() {
-        let signUpModule = SignUpRouter.createModule()
-        viewController?.navigationController?.pushViewController(signUpModule, animated: true)
-
+        // TODO:- go to signUp Module
     }
-    
+
 }

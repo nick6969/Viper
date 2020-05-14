@@ -11,26 +11,37 @@ import Foundation
 // MARK: Router
 protocol SignInRouterProtocol: AnyObject {
     // Presenter -> Router
+    func changeToHomeModule()
 }
 
 // MARK: Presenter
 protocol SignInPresenterProtocol: AnyObject {
     // View -> Presenter
+    func confirm(name: String?, password: String?)
 }
 
 // MARK: Interactor Input
 protocol SignInInputInteractorProtocol: AnyObject {
-    // Presenter -> Interactor
     var presenter: SignInOutputInteractorProtocol? { get set }
+    
+    // Presenter -> Interactor
+    func signIn(name: String, password: String)
 }
 
 // MARK: Interactor Output
 protocol SignInOutputInteractorProtocol: AnyObject {
     // Interactor -> Presenter
+    func signInSuccess()
+    func signInFailure(error: Error?)
 }
 
 // MARK: View
 protocol SignInViewProtocol: AnyObject {
-    // PRESENTER -> VIEW
     var presenter: SignInPresenterProtocol? { get set }
+    
+    // PRESENTER -> VIEW
+    func showLoading()
+    func dismissLoading()
+    
+    func showError(message: String)
 }
