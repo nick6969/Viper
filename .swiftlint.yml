@@ -52,7 +52,7 @@ excluded:
   - Carthage
   
 function_body_length: 100
-line_length: 120
+line_length: 150
 function_parameter_count: 8
 file_length: 400
 cyclomatic_complexity: 30

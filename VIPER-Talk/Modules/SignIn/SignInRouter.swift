@@ -30,7 +30,8 @@ final class SignInRouter {
 extension SignInRouter: SignInRouterProtocol {
 
     func changeToHomeModule() {
-        // TODO: - move screen to home
+        let homeModule = HomeRouter.createModule()
+        viewController?.navigationController?.setViewControllers([homeModule], animated: true)
     }
     
 }
