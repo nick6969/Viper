@@ -12,6 +12,11 @@
 		01184365246245D000007317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01184363246245D000007317 /* LaunchScreen.storyboard */; };
 		01184370246245D100007317 /* VIPERTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0118436F246245D100007317 /* VIPERTalkTests.swift */; };
 		013573F0246E2A23004C9602 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013573EF246E2A23004C9602 /* UITableViewExtension.swift */; };
+		013573F8246E2FEA004C9602 /* CategotyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013573F2246E2FEA004C9602 /* CategotyPresenter.swift */; };
+		013573F9246E2FEA004C9602 /* CategotyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013573F3246E2FEA004C9602 /* CategotyRouter.swift */; };
+		013573FA246E2FEA004C9602 /* CategotyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013573F4246E2FEA004C9602 /* CategotyViewController.swift */; };
+		013573FB246E2FEA004C9602 /* CategotyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013573F5246E2FEA004C9602 /* CategotyProtocols.swift */; };
+		013573FC246E2FEA004C9602 /* CategotyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013573F6246E2FEA004C9602 /* CategotyInteractor.swift */; };
 		017D099E246BE9F30032DEEB /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D0998246BE9F30032DEEB /* SignInPresenter.swift */; };
 		017D099F246BE9F30032DEEB /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D0999246BE9F30032DEEB /* SignInRouter.swift */; };
 		017D09A0246BE9F30032DEEB /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D099A246BE9F30032DEEB /* SignInViewController.swift */; };
@@ -34,7 +39,6 @@
 		01C2CD97246D9BD9005B5B9F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2CD91246D9BD9005B5B9F /* HomeViewController.swift */; };
 		01C2CD98246D9BD9005B5B9F /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2CD92246D9BD9005B5B9F /* HomeProtocols.swift */; };
 		01C2CD99246D9BD9005B5B9F /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2CD93246D9BD9005B5B9F /* HomeInteractor.swift */; };
-		01C2CD9A246D9BD9005B5B9F /* HomeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2CD94246D9BD9005B5B9F /* HomeEntity.swift */; };
 		78556EF259BD5F2C2983E5A7 /* Pods_VIPER_Talk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13631AD319274D9EA11157AA /* Pods_VIPER_Talk.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +62,11 @@
 		0118436F246245D100007317 /* VIPERTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPERTalkTests.swift; sourceTree = "<group>"; };
 		01184371246245D100007317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		013573EF246E2A23004C9602 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		013573F2246E2FEA004C9602 /* CategotyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategotyPresenter.swift; sourceTree = "<group>"; };
+		013573F3246E2FEA004C9602 /* CategotyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategotyRouter.swift; sourceTree = "<group>"; };
+		013573F4246E2FEA004C9602 /* CategotyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategotyViewController.swift; sourceTree = "<group>"; };
+		013573F5246E2FEA004C9602 /* CategotyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategotyProtocols.swift; sourceTree = "<group>"; };
+		013573F6246E2FEA004C9602 /* CategotyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategotyInteractor.swift; sourceTree = "<group>"; };
 		017D0998246BE9F30032DEEB /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		017D0999246BE9F30032DEEB /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
 		017D099A246BE9F30032DEEB /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +89,6 @@
 		01C2CD91246D9BD9005B5B9F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		01C2CD92246D9BD9005B5B9F /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
 		01C2CD93246D9BD9005B5B9F /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
-		01C2CD94246D9BD9005B5B9F /* HomeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEntity.swift; sourceTree = "<group>"; };
 		02CC5BB079CE6804555DD8D2 /* Pods-VIPER-Talk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPER-Talk.release.xcconfig"; path = "Target Support Files/Pods-VIPER-Talk/Pods-VIPER-Talk.release.xcconfig"; sourceTree = "<group>"; };
 		13631AD319274D9EA11157AA /* Pods_VIPER_Talk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPER_Talk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B53ABB58D5063308DBAEC3B /* Pods-VIPER-Talk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPER-Talk.debug.xcconfig"; path = "Target Support Files/Pods-VIPER-Talk/Pods-VIPER-Talk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +177,18 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		013573F1246E2FD3004C9602 /* Categoty */ = {
+			isa = PBXGroup;
+			children = (
+				013573F6246E2FEA004C9602 /* CategotyInteractor.swift */,
+				013573F2246E2FEA004C9602 /* CategotyPresenter.swift */,
+				013573F5246E2FEA004C9602 /* CategotyProtocols.swift */,
+				013573F3246E2FEA004C9602 /* CategotyRouter.swift */,
+				013573F4246E2FEA004C9602 /* CategotyViewController.swift */,
+			);
+			path = Categoty;
+			sourceTree = "<group>";
+		};
 		014CF0B4246AEAB700C07333 /* WebService */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +255,7 @@
 		017E0E0C24624C40007FCBC6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				013573F1246E2FD3004C9602 /* Categoty */,
 				01C2CD8E246D9BC7005B5B9F /* Home */,
 				011210BF24627910009D0E45 /* Main */,
 				017D0997246BE9E40032DEEB /* SignIn */,
@@ -255,7 +276,6 @@
 		01C2CD8E246D9BC7005B5B9F /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				01C2CD94246D9BD9005B5B9F /* HomeEntity.swift */,
 				01C2CD93246D9BD9005B5B9F /* HomeInteractor.swift */,
 				01C2CD8F246D9BD9005B5B9F /* HomePresenter.swift */,
 				01C2CD92246D9BD9005B5B9F /* HomeProtocols.swift */,
@@ -450,7 +470,11 @@
 			files = (
 				017D09A6246C54D60032DEEB /* AlertHelp.swift in Sources */,
 				01184359246245CE00007317 /* AppDelegate.swift in Sources */,
-				01C2CD9A246D9BD9005B5B9F /* HomeEntity.swift in Sources */,
+				013573FC246E2FEA004C9602 /* CategotyInteractor.swift in Sources */,
+				013573F8246E2FEA004C9602 /* CategotyPresenter.swift in Sources */,
+				013573FB246E2FEA004C9602 /* CategotyProtocols.swift in Sources */,
+				013573F9246E2FEA004C9602 /* CategotyRouter.swift in Sources */,
+				013573FA246E2FEA004C9602 /* CategotyViewController.swift in Sources */,
 				01C2CD99246D9BD9005B5B9F /* HomeInteractor.swift in Sources */,
 				01C2CD95246D9BD9005B5B9F /* HomePresenter.swift in Sources */,
 				01C2CD98246D9BD9005B5B9F /* HomeProtocols.swift in Sources */,

@@ -30,7 +30,8 @@ final class HomeRouter {
 extension HomeRouter: HomeRouterProtocol {
 
     func pushToCatrgoty(id: String) {
-        // TODO: - push To Catrgoty module
+        let category = CategotyRouter.createModule(branchID: id)
+        viewController?.navigationController?.pushViewController(category, animated: true)
     }
 
 }
