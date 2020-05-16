@@ -14,9 +14,7 @@ final class CategoryPresenter {
     private let interactor: CategoryInputInteractorProtocol
     private let router: CategoryRouterProtocol
     private let branchID: String
-    
-    private var models: [BranchModel] = []
-    
+        
     init(view: CategoryViewProtocol, interactor: CategoryInputInteractorProtocol, router: CategoryRouterProtocol, branchID: String) {
         self.view = view
         self.interactor = interactor
@@ -34,15 +32,16 @@ extension CategoryPresenter: CategoryPresenterProtocol {
     }
     
     func numberOfItem(in section: Int) -> Int {
-        return models.count
+        return interactor.models.count
     }
     
     func modelAt(index: Int) -> BranchModel {
-        return models[index]
+        return interactor.models[index]
     }
     
     func didSelect(_ indexPath: IndexPath) {
-        router.pushToSmallCategory(id: models[indexPath.row].id)
+        let model = interactor.models[indexPath.row]
+        router.pushToSmallCategory(id: model.id)
     }
 
 }
@@ -50,8 +49,7 @@ extension CategoryPresenter: CategoryPresenterProtocol {
 // Interactor -> Presenter
 extension CategoryPresenter: CategoryOutputInteractorProtocol {
     
-    func loadCategorySuccess(models: [BranchModel]) {
-        self.models = models
+    func loadCategorySuccess() {
         view?.dismissLoading()
         view?.loadDone()
     }

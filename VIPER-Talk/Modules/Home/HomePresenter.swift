@@ -13,9 +13,7 @@ final class HomePresenter {
     private weak var view: HomeViewProtocol?
     private let interactor: HomeInputInteractorProtocol
     private let router: HomeRouterProtocol
-    
-    private var models: [BranchModel] = []
-    
+        
     init(view: HomeViewProtocol, interactor: HomeInputInteractorProtocol, router: HomeRouterProtocol) {
         self.view = view
         self.interactor = interactor
@@ -32,23 +30,23 @@ extension HomePresenter: HomePresenterProtocol {
     }
     
     func numberOfItem(in section: Int) -> Int {
-        return models.count
+        return interactor.models.count
     }
 
     func modelAt(index: Int) -> BranchModel {
-        return models[index]
+        return interactor.models[index]
     }
     
     func didSelect(_ indexPath: IndexPath) {
-        router.pushToCatrgoty(id: models[indexPath.row].id)
+        let model = interactor.models[indexPath.row]
+        router.pushToCatrgoty(id: model.id)
     }
 }
 
 // Interactor -> Presenter
 extension HomePresenter: HomeOutputInteractorProtocol {
     
-    func loadBranchSuccess(models: [BranchModel]) {
-        self.models = models
+    func loadBranchSuccess() {
         view?.dismissLoading()
         view?.loadDone()
     }

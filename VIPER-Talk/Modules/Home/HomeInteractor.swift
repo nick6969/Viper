@@ -12,7 +12,8 @@ final class HomeInteractor {
     
     var presenter: HomeOutputInteractorProtocol?
     var webService: HomeWebServiceProtocol?
-
+    
+    var models: [BranchModel] = []
 }
 
 // Presenter -> Interactor
@@ -21,7 +22,8 @@ extension HomeInteractor: HomeInputInteractorProtocol {
     func loadBranch() {
         webService?.getBranch(success: { [weak self] models in
             DispatchQueue.main.async {
-                self?.presenter?.loadBranchSuccess(models: models)
+                self?.models = models
+                self?.presenter?.loadBranchSuccess()
             }
         }, failure: { [weak self] error in
             DispatchQueue.main.async {

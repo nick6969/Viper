@@ -27,6 +27,7 @@ protocol HomePresenterProtocol: AnyObject {
 protocol HomeInputInteractorProtocol: AnyObject {
     var presenter: HomeOutputInteractorProtocol? { get set }
     var webService: HomeWebServiceProtocol? { get set }
+    var models: [BranchModel] { get }
     
     // Presenter -> Interactor
     func loadBranch()
@@ -35,7 +36,7 @@ protocol HomeInputInteractorProtocol: AnyObject {
 // MARK: Interactor Output
 protocol HomeOutputInteractorProtocol: AnyObject {
     // Interactor -> Presenter
-    func loadBranchSuccess(models: [BranchModel])
+    func loadBranchSuccess()
     func loadBranchFailure(error: Error?)
 }
 

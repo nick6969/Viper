@@ -27,7 +27,8 @@ protocol CategoryPresenterProtocol: AnyObject {
 protocol CategoryInputInteractorProtocol: AnyObject {
     var presenter: CategoryOutputInteractorProtocol? { get set }
     var webService: CategoryWebServiceProtocol? { get set }
-    
+    var models: [BranchModel] { get }
+
     // Presenter -> Interactor
     func loadCategory(id: String)
 }
@@ -35,7 +36,7 @@ protocol CategoryInputInteractorProtocol: AnyObject {
 // MARK: Interactor Output
 protocol CategoryOutputInteractorProtocol: AnyObject {
     // Interactor -> Presenter
-    func loadCategorySuccess(models: [BranchModel])
+    func loadCategorySuccess()
     func loadCategotyFailure(error: Error?)
 }
 

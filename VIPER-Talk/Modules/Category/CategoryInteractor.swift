@@ -12,6 +12,7 @@ final class CategoryInteractor {
     
     var presenter: CategoryOutputInteractorProtocol?
     var webService: CategoryWebServiceProtocol?
+    var models: [BranchModel] = []
 }
 
 // Presenter -> Interactor
@@ -20,7 +21,8 @@ extension CategoryInteractor: CategoryInputInteractorProtocol {
     func loadCategory(id: String) {
         webService?.getCategoryWith(id: id, success: {[weak self] models in
             DispatchQueue.main.async {
-                self?.presenter?.loadCategorySuccess(models: models)
+                self?.models = models
+                self?.presenter?.loadCategorySuccess()
             }
             }, failure: {[weak self] error in
                 DispatchQueue.main.async {
