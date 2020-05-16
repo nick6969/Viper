@@ -11,13 +11,14 @@ import Foundation
 final class CategoryInteractor {
     
     var presenter: CategoryOutputInteractorProtocol?
+    var webService: CategoryWebServiceProtocol?
 }
 
 // Presenter -> Interactor
 extension CategoryInteractor: CategoryInputInteractorProtocol {
     
     func loadCategory(id: String) {
-        WebService.shared.getCategoryWith(id: id, success: {[weak self] models in
+        webService?.getCategoryWith(id: id, success: {[weak self] models in
             DispatchQueue.main.async {
                 self?.presenter?.loadCategorySuccess(models: models)
             }

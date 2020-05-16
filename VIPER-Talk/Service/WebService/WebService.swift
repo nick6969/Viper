@@ -8,14 +8,19 @@
 
 import Foundation
 
+typealias ModelSuccessClosure<Model: Codable> = (Model) -> Void
+typealias EmptySuccessClosure = () -> Void
+typealias ErrorClosure = (Error?) -> Void
+
 final class WebService {
-    typealias ModelSuccessClosure<Model: Codable> = (Model) -> Void
-    typealias EmptySuccessClosure = () -> Void
-    typealias ErrorClosure = (Error?) -> Void
     
     static let shared: WebService = WebService()
     
     private init() {}
+    
+}
+
+extension WebService: SignInWebServiceProtocol {
     
     func signIn(name: String,
                 password: String,
@@ -32,6 +37,30 @@ final class WebService {
         
     }
     
+}
+
+extension WebService: CategoryWebServiceProtocol {
+    
+    func getCategoryWith(id: String, success: ModelSuccessClosure<[BranchModel]>?, failure: ErrorClosure?) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+            do {
+                let dic = try self.getDic(name: "category")
+                guard let key = dic[id] as? [String: Any], let array = key["data"] as? [Any] else {
+                    failure?(ApiError.fileContentNoCorrect)
+                    return
+                }
+                let models = try self.arrayToModel(array: array)
+                success?(models)
+            } catch {
+                failure?(error)
+            }
+        }
+    }
+    
+}
+
+extension WebService {
+
     func signUp(name: String,
                 password: String,
                 success: EmptySuccessClosure?,
@@ -52,22 +81,6 @@ final class WebService {
             do {
                 let dic = try self.getDic(name: "branch")
                 guard let array = dic["data"] as? [Any] else {
-                    failure?(ApiError.fileContentNoCorrect)
-                    return
-                }
-                let models = try self.arrayToModel(array: array)
-                success?(models)
-            } catch {
-                failure?(error)
-            }
-        }
-    }
-    
-    func getCategoryWith(id: String, success: ModelSuccessClosure<[BranchModel]>?, failure: ErrorClosure?) {
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
-            do {
-                let dic = try self.getDic(name: "category")
-                guard let key = dic[id] as? [String: Any], let array = key["data"] as? [Any] else {
                     failure?(ApiError.fileContentNoCorrect)
                     return
                 }

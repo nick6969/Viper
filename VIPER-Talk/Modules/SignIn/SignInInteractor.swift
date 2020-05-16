@@ -11,6 +11,7 @@ import Foundation
 final class SignInInteractor {
     
     var presenter: SignInOutputInteractorProtocol?
+    var webService: SignInWebServiceProtocol?
     
 }
 
@@ -34,7 +35,7 @@ extension SignInInteractor: SignInInputInteractorProtocol {
             return
         }
         
-        WebService.shared.signIn(name: name, password: password, success: { [weak self] in
+        webService?.signIn(name: name, password: password, success: { [weak self] in
             DispatchQueue.main.async {
                 self?.presenter?.signInSuccess()
             }

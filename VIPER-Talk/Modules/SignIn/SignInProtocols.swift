@@ -23,7 +23,8 @@ protocol SignInPresenterProtocol: AnyObject {
 // MARK: Interactor Input
 protocol SignInInputInteractorProtocol: AnyObject {
     var presenter: SignInOutputInteractorProtocol? { get set }
-    
+    var webService: SignInWebServiceProtocol? { get set }
+
     // Presenter -> Interactor
     func signIn(name: String?, password: String?)
 }
@@ -44,4 +45,11 @@ protocol SignInViewProtocol: AnyObject {
     func dismissLoading()
     
     func showMessage(_ message: String)
+}
+
+protocol SignInWebServiceProtocol: AnyObject {
+    func signIn(name: String,
+                password: String,
+                success: EmptySuccessClosure?,
+                failure: ErrorClosure?)
 }
