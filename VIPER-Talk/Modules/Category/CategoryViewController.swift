@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class CategotyViewController: UIViewController {
+final class CategoryViewController: UIViewController {
     
-    var presenter: CategotyPresenterProtocol?
+    var presenter: CategoryPresenterProtocol?
     
     private
     lazy var tableView: UITableView = {
@@ -43,7 +43,7 @@ final class CategotyViewController: UIViewController {
 }
 
 // PRESENTER -> VIEW
-extension CategotyViewController: CategotyViewProtocol {
+extension CategoryViewController: CategoryViewProtocol {
 
     func showLoading() {
         view.showProgress()
@@ -63,7 +63,7 @@ extension CategotyViewController: CategotyViewProtocol {
 
 }
 
-extension CategotyViewController: UITableViewDataSource, UITableViewDelegate {
+extension CategoryViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter?.numberOfItem(in: section) ?? 0

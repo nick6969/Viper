@@ -8,15 +8,15 @@
 
 import UIKit
 
-final class CategotyRouter {
+final class CategoryRouter {
     
     weak var viewController: UIViewController?
     
     static func createModule(branchID: String) -> UIViewController {
-        let view: CategotyViewController = CategotyViewController()
-        let interactor: CategotyInteractor = CategotyInteractor()
-        let router: CategotyRouter = CategotyRouter()
-        let presenter: CategotyPresenter = CategotyPresenter(view: view, interactor: interactor, router: router, branchID: branchID)
+        let view: CategoryViewController = CategoryViewController()
+        let interactor: CategoryInteractor = CategoryInteractor()
+        let router: CategoryRouter = CategoryRouter()
+        let presenter: CategoryPresenter = CategoryPresenter(view: view, interactor: interactor, router: router, branchID: branchID)
         
         view.presenter = presenter
         interactor.presenter = presenter
@@ -27,7 +27,7 @@ final class CategotyRouter {
 }
 
 // Presenter -> Router
-extension CategotyRouter: CategotyRouterProtocol {
+extension CategoryRouter: CategoryRouterProtocol {
 
     func pushToSmallCategory(id: String) {
         // TODO: - pushToSmallCategory

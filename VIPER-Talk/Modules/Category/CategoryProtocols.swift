@@ -1,5 +1,5 @@
 //
-//  CategotyProtocols.swift
+//  CategoryProtocols.swift
 //  VIPER-Talk
 //
 //  Created by Nick on 5/15/20.
@@ -9,13 +9,13 @@
 import Foundation
 
 // MARK: Router
-protocol CategotyRouterProtocol: AnyObject {
+protocol CategoryRouterProtocol: AnyObject {
     // Presenter -> Router
     func pushToSmallCategory(id: String)
 }
 
 // MARK: Presenter
-protocol CategotyPresenterProtocol: AnyObject {
+protocol CategoryPresenterProtocol: AnyObject {
     // View -> Presenter
     func loadCategory()
     func numberOfItem(in section: Int) -> Int
@@ -24,23 +24,23 @@ protocol CategotyPresenterProtocol: AnyObject {
 }
 
 // MARK: Interactor Input
-protocol CategotyInputInteractorProtocol: AnyObject {
-    var presenter: CategotyOutputInteractorProtocol? { get set }
+protocol CategoryInputInteractorProtocol: AnyObject {
+    var presenter: CategoryOutputInteractorProtocol? { get set }
 
     // Presenter -> Interactor
     func loadCategory(id: String)
 }
 
 // MARK: Interactor Output
-protocol CategotyOutputInteractorProtocol: AnyObject {
+protocol CategoryOutputInteractorProtocol: AnyObject {
     // Interactor -> Presenter
     func loadCategorySuccess(models: [BranchModel])
     func loadCategotyFailure(error: Error?)
 }
 
 // MARK: View
-protocol CategotyViewProtocol: AnyObject {
-    var presenter: CategotyPresenterProtocol? { get set }
+protocol CategoryViewProtocol: AnyObject {
+    var presenter: CategoryPresenterProtocol? { get set }
     
     // PRESENTER -> VIEW
     func showLoading()

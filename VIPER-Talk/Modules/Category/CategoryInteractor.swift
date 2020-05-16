@@ -1,5 +1,5 @@
 //
-//  CategotyInteractor.swift
+//  CategoryInteractor.swift
 //  VIPER-Talk
 //
 //  Created by Nick on 5/15/20.
@@ -8,14 +8,13 @@
 
 import Foundation
 
-final class CategotyInteractor {
+final class CategoryInteractor {
     
-    var presenter: CategotyOutputInteractorProtocol?
-    
+    var presenter: CategoryOutputInteractorProtocol?
 }
 
 // Presenter -> Interactor
-extension CategotyInteractor: CategotyInputInteractorProtocol {
+extension CategoryInteractor: CategoryInputInteractorProtocol {
     
     func loadCategory(id: String) {
         WebService.shared.getCategoryWith(id: id, success: {[weak self] models in

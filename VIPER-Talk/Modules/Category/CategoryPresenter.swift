@@ -1,5 +1,5 @@
 //
-//  CategotyPresenter.swift
+//  CategoryPresenter.swift
 //  VIPER-Talk
 //
 //  Created by Nick on 5/15/20.
@@ -8,16 +8,16 @@
 
 import Foundation
 
-final class CategotyPresenter {
+final class CategoryPresenter {
     
-    private weak var view: CategotyViewProtocol?
-    private let interactor: CategotyInputInteractorProtocol
-    private let router: CategotyRouterProtocol
+    private weak var view: CategoryViewProtocol?
+    private let interactor: CategoryInputInteractorProtocol
+    private let router: CategoryRouterProtocol
     private let branchID: String
     
     private var models: [BranchModel] = []
     
-    init(view: CategotyViewProtocol, interactor: CategotyInputInteractorProtocol, router: CategotyRouterProtocol, branchID: String) {
+    init(view: CategoryViewProtocol, interactor: CategoryInputInteractorProtocol, router: CategoryRouterProtocol, branchID: String) {
         self.view = view
         self.interactor = interactor
         self.router = router
@@ -26,7 +26,7 @@ final class CategotyPresenter {
 }
 
 // View -> Presenter
-extension CategotyPresenter: CategotyPresenterProtocol {
+extension CategoryPresenter: CategoryPresenterProtocol {
     
     func loadCategory() {
         view?.showLoading()
@@ -48,7 +48,7 @@ extension CategotyPresenter: CategotyPresenterProtocol {
 }
 
 // Interactor -> Presenter
-extension CategotyPresenter: CategotyOutputInteractorProtocol {
+extension CategoryPresenter: CategoryOutputInteractorProtocol {
     
     func loadCategorySuccess(models: [BranchModel]) {
         self.models = models
