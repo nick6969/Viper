@@ -11,14 +11,15 @@ import Foundation
 final class HomeInteractor {
     
     var presenter: HomeOutputInteractorProtocol?
-    
+    var webService: HomeWebServiceProtocol?
+
 }
 
 // Presenter -> Interactor
 extension HomeInteractor: HomeInputInteractorProtocol {
     
     func loadBranch() {
-        WebService.shared.getBranch(success: { [weak self] models in
+        webService?.getBranch(success: { [weak self] models in
             DispatchQueue.main.async {
                 self?.presenter?.loadBranchSuccess(models: models)
             }

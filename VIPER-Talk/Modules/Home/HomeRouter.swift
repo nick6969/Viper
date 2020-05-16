@@ -20,6 +20,7 @@ final class HomeRouter {
         
         view.presenter = presenter
         interactor.presenter = presenter
+        interactor.webService = WebService.shared
         router.viewController = view
         
         return view

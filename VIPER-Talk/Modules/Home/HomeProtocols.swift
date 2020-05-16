@@ -26,7 +26,8 @@ protocol HomePresenterProtocol: AnyObject {
 // MARK: Interactor Input
 protocol HomeInputInteractorProtocol: AnyObject {
     var presenter: HomeOutputInteractorProtocol? { get set }
-
+    var webService: HomeWebServiceProtocol? { get set }
+    
     // Presenter -> Interactor
     func loadBranch()
 }
@@ -48,4 +49,11 @@ protocol HomeViewProtocol: AnyObject {
     
     func showMessage(_ message: String)
     func loadDone()
+}
+
+// MARK: WebService
+protocol HomeWebServiceProtocol: AnyObject {
+    // Interactor -> WebService
+    func getBranch(success: ModelSuccessClosure<[BranchModel]>?,
+                   failure: ErrorClosure?)
 }

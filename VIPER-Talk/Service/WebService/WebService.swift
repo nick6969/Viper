@@ -59,22 +59,7 @@ extension WebService: CategoryWebServiceProtocol {
     
 }
 
-extension WebService {
-
-    func signUp(name: String,
-                password: String,
-                success: EmptySuccessClosure?,
-                failure: ErrorClosure?) {
-        
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
-            if Int64(Date().timeIntervalSince1970) % 2 == 0 {
-                success?()
-            } else {
-                failure?(ApiError.userNameDuplicate)
-            }
-        }
-        
-    }
+extension WebService: HomeWebServiceProtocol {
     
     func getBranch(success: ModelSuccessClosure<[BranchModel]>?, failure: ErrorClosure?) {
         DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
@@ -92,6 +77,25 @@ extension WebService {
         }
     }
     
+}
+
+extension WebService {
+
+    func signUp(name: String,
+                password: String,
+                success: EmptySuccessClosure?,
+                failure: ErrorClosure?) {
+        
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+            if Int64(Date().timeIntervalSince1970) % 2 == 0 {
+                success?()
+            } else {
+                failure?(ApiError.userNameDuplicate)
+            }
+        }
+        
+    }
+        
     func getSmallCategoryWith(id: String, success: ModelSuccessClosure<[BranchModel]>?, failure: ErrorClosure?) {
         DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
             do {
