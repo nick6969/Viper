@@ -29,6 +29,11 @@ extension SignInPresenter: SignInPresenterProtocol {
         view?.showLoading()
         interactor.signIn(name: name, password: password)
     }
+    
+    func check(name: String?, password: String?) {
+        let enabled = interactor.check(name: name, password: password)
+        view?.sendButtonStatus(enabled: enabled)
+    }
 
 }
 

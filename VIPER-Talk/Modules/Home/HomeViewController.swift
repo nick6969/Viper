@@ -34,7 +34,7 @@ final class HomeViewController: UIViewController {
     
     private
     func setupUI() {
-        view.backgroundColor = .clear
+        view.backgroundColor = .white
         title = "Home"
         view.addSubview(tableView)
         tableView.mLaySafe(pin: .allZero)

@@ -34,7 +34,7 @@ final class CategoryViewController: UIViewController {
     
     private
     func setupUI() {
-        view.backgroundColor = .clear
+        view.backgroundColor = .white
         title = "Category"
         view.addSubview(tableView)
         tableView.mLaySafe(pin: .allZero)

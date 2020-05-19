@@ -18,6 +18,7 @@ protocol SignInRouterProtocol: AnyObject {
 protocol SignInPresenterProtocol: AnyObject {
     // View -> Presenter
     func send(name: String?, password: String?)
+    func check(name: String?, password: String?)
 }
 
 // MARK: Interactor Input
@@ -27,6 +28,7 @@ protocol SignInInputInteractorProtocol: AnyObject {
 
     // Presenter -> Interactor
     func signIn(name: String?, password: String?)
+    func check(name: String?, password: String?) -> Bool
 }
 
 // MARK: Interactor Output
@@ -45,6 +47,8 @@ protocol SignInViewProtocol: AnyObject {
     func dismissLoading()
     
     func showMessage(_ message: String)
+    
+    func sendButtonStatus(enabled: Bool)
 }
 
 protocol SignInWebServiceProtocol: AnyObject {

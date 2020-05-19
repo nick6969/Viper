@@ -46,6 +46,18 @@ extension SignInInteractor: SignInInputInteractorProtocol {
         })
 
     }
+    
+    func check(name: String?, password: String?) -> Bool {
+        guard
+            let name = name,
+            let password = password,
+            name.validate(with: .username),
+            password.validate(with: .password)
+        else {
+            return false
+        }
+        return true
+    }
 
 }
 
