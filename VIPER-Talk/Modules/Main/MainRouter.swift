@@ -39,7 +39,13 @@ extension MainRouter: MainRouterProtocol {
     }
     
     func pushToSignUp() {
-        // TODO:- go to signUp Module
+        guard let nav: UINavigationController = viewController?.navigationController else {
+            assertionFailure("can't got navigationController, please check.")
+            return
+        }
+        
+        let signUpModule = SignUpRouter.createModule()
+        nav.pushViewController(signUpModule, animated: true)
     }
 
 }

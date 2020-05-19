@@ -79,8 +79,8 @@ extension WebService: HomeWebServiceProtocol {
     
 }
 
-extension WebService {
-
+extension WebService: SignUpWebServiceProtocol {
+    
     func signUp(name: String,
                 password: String,
                 success: EmptySuccessClosure?,
@@ -95,7 +95,11 @@ extension WebService {
         }
         
     }
-        
+
+}
+
+extension WebService {
+
     func getSmallCategoryWith(id: String, success: ModelSuccessClosure<[BranchModel]>?, failure: ErrorClosure?) {
         DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
             do {
