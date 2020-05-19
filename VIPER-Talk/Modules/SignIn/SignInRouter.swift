@@ -31,8 +31,12 @@ final class SignInRouter {
 extension SignInRouter: SignInRouterProtocol {
 
     func changeToHomeModule() {
+        guard let nav: UINavigationController = viewController?.navigationController else {
+            assertionFailure("can't got navigationController, please check.")
+            return
+        }
         let homeModule = HomeRouter.createModule()
-        viewController?.navigationController?.setViewControllers([homeModule], animated: true)
+        nav.setViewControllers([homeModule], animated: true)
     }
     
 }

@@ -31,8 +31,13 @@ final class HomeRouter {
 extension HomeRouter: HomeRouterProtocol {
 
     func pushToCatrgoty(id: String) {
+        guard let nav: UINavigationController = viewController?.navigationController else {
+            assertionFailure("can't got navigationController, please check.")
+            return
+        }
+
         let category = CategoryRouter.createModule(branchID: id)
-        viewController?.navigationController?.pushViewController(category, animated: true)
+        nav.pushViewController(category, animated: true)
     }
 
 }

@@ -30,8 +30,12 @@ final class MainRouter {
 extension MainRouter: MainRouterProtocol {
 
     func pushToSignIn() {
+        guard let nav: UINavigationController = viewController?.navigationController else {
+            assertionFailure("can't got navigationController, please check.")
+            return
+        }
         let signInModule = SignInRouter.createModule()
-        viewController?.navigationController?.pushViewController(signInModule, animated: true)
+        nav.pushViewController(signInModule, animated: true)
     }
     
     func pushToSignUp() {
