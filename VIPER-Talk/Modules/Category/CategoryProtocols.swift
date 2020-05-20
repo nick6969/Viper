@@ -6,7 +6,7 @@
 //  Copyright © 2020 co.Kcin.Nil. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // MARK: Router
 protocol CategoryRouterProtocol: AnyObject {
@@ -41,7 +41,7 @@ protocol CategoryOutputInteractorProtocol: AnyObject {
 }
 
 // MARK: View
-protocol CategoryViewProtocol: AnyObject {
+protocol CategoryViewProtocol: UIViewController {
     var presenter: CategoryPresenterProtocol! { get set }
     
     // PRESENTER -> VIEW

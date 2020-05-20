@@ -10,16 +10,16 @@ import UIKit
 
 final class CategoryRouter {
     
-    private unowned var viewController: UIViewController
-    
-    init(viewController: UIViewController) {
-        self.viewController = viewController
+    private unowned var view: CategoryViewProtocol
+
+    init(view: CategoryViewProtocol) {
+        self.view = view
     }
     
-    static func createModule(branchID: String) -> UIViewController {
+    static func createModule(branchID: String) -> CategoryViewProtocol {
         let view: CategoryViewController = CategoryViewController()
         let interactor: CategoryInteractor = CategoryInteractor()
-        let router: CategoryRouter = CategoryRouter(viewController: view)
+        let router: CategoryRouter = CategoryRouter(view: view)
         let presenter: CategoryPresenter = CategoryPresenter(view: view, interactor: interactor, router: router, branchID: branchID)
         
         view.presenter = presenter

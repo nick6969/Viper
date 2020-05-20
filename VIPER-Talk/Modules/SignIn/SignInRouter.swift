@@ -9,17 +9,17 @@
 import UIKit
 
 final class SignInRouter {
-    
-    private unowned var viewController: UIViewController
-    
-    init(viewController: UIViewController) {
-        self.viewController = viewController
+        
+    private unowned var view: SignInViewProtocol
+
+    init(view: SignInViewProtocol) {
+        self.view = view
     }
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> SignInViewProtocol {
         let view: SignInViewController = SignInViewController()
         let interactor: SignInInteractor = SignInInteractor()
-        let router: SignInRouter = SignInRouter(viewController: view)
+        let router: SignInRouter = SignInRouter(view: view)
         let presenter: SignInPresenter = SignInPresenter(view: view, interactor: interactor, router: router)
         
         view.presenter = presenter
@@ -34,7 +34,7 @@ final class SignInRouter {
 extension SignInRouter: SignInRouterProtocol {
 
     func changeToHomeModule() {
-        guard let nav = viewController.navigationController else {
+        guard let nav = view.navigationController else {
             assertionFailure("can't got navigationController, please check.")
             return
         }

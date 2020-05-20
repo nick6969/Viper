@@ -6,7 +6,7 @@
 //  Copyright © 2020 co.Kcin.Nil. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // MARK: Router
 protocol MainRouterProtocol: AnyObject {
@@ -35,7 +35,7 @@ protocol MainOutputInteractorProtocol: AnyObject {
 }
 
 // MARK: View
-protocol MainViewProtocol: AnyObject {
+protocol MainViewProtocol: UIViewController {
     var presenter: MainPresenterProtocol! { get set }
     
     // PRESENTER -> VIEW

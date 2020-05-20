@@ -10,16 +10,16 @@ import UIKit
 
 final class HomeRouter {
     
-    private unowned var viewController: UIViewController
+    private unowned var view: HomeViewProtocol
     
-    init(viewController: UIViewController) {
-        self.viewController = viewController
+    init(view: HomeViewProtocol) {
+        self.view = view
     }
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> HomeViewProtocol {
         let view: HomeViewController = HomeViewController()
         let interactor: HomeInteractor = HomeInteractor()
-        let router: HomeRouter = HomeRouter(viewController: view)
+        let router: HomeRouter = HomeRouter(view: view)
         let presenter: HomePresenter = HomePresenter(view: view, interactor: interactor, router: router)
         
         view.presenter = presenter
@@ -34,7 +34,7 @@ final class HomeRouter {
 extension HomeRouter: HomeRouterProtocol {
 
     func pushToCatrgoty(id: String) {
-        guard let nav = viewController.navigationController else {
+        guard let nav = view.navigationController else {
             assertionFailure("can't got navigationController, please check.")
             return
         }

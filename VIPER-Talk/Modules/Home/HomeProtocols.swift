@@ -6,7 +6,7 @@
 //  Copyright © 2020 co.Kcin.Nil. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // MARK: Router
 protocol HomeRouterProtocol: AnyObject {
@@ -41,7 +41,7 @@ protocol HomeOutputInteractorProtocol: AnyObject {
 }
 
 // MARK: View
-protocol HomeViewProtocol: AnyObject {
+protocol HomeViewProtocol: UIViewController {
     var presenter: HomePresenterProtocol! { get set }
     
     // PRESENTER -> VIEW

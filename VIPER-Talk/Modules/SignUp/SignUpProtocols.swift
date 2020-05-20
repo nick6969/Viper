@@ -6,7 +6,7 @@
 //  Copyright © 2020 co.Kcin.Nil. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // MARK: Router
 protocol SignUpRouterProtocol: AnyObject {
@@ -39,7 +39,7 @@ protocol SignUpOutputInteractorProtocol: AnyObject {
 }
 
 // MARK: View
-protocol SignUpViewProtocol: AnyObject {
+protocol SignUpViewProtocol: UIViewController {
     var presenter: SignUpPresenterProtocol! { get set }
     
     // PRESENTER -> VIEW
