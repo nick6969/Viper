@@ -6,7 +6,7 @@
 //  Copyright © 2020 co.Kcin.Nil. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 final class HomeRouter {
     
@@ -16,18 +16,6 @@ final class HomeRouter {
         self.view = view
     }
 
-    static func createModule() -> HomeViewProtocol {
-        let view: HomeViewController = HomeViewController()
-        let interactor: HomeInteractor = HomeInteractor()
-        let router: HomeRouter = HomeRouter(view: view)
-        let presenter: HomePresenter = HomePresenter(view: view, interactor: interactor, router: router)
-        
-        view.presenter = presenter
-        interactor.presenter = presenter
-        interactor.webService = WebService.shared
-        
-        return view
-    }
 }
 
 // Presenter -> Router
@@ -39,7 +27,7 @@ extension HomeRouter: HomeRouterProtocol {
             return
         }
 
-        let category = CategoryRouter.createModule(branchID: id)
+        let category = CategoryModule.build(branchID: id)
         nav.pushViewController(category, animated: true)
     }
 

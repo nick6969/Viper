@@ -6,7 +6,7 @@
 //  Copyright © 2020 co.Kcin.Nil. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 final class CategoryRouter {
     
@@ -16,18 +16,6 @@ final class CategoryRouter {
         self.view = view
     }
     
-    static func createModule(branchID: String) -> CategoryViewProtocol {
-        let view: CategoryViewController = CategoryViewController()
-        let interactor: CategoryInteractor = CategoryInteractor()
-        let router: CategoryRouter = CategoryRouter(view: view)
-        let presenter: CategoryPresenter = CategoryPresenter(view: view, interactor: interactor, router: router, branchID: branchID)
-        
-        view.presenter = presenter
-        interactor.presenter = presenter
-        interactor.webService = WebService.shared
-        
-        return view
-    }
 }
 
 // Presenter -> Router

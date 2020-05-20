@@ -6,7 +6,7 @@
 //  Copyright © 2020 co.Kcin.Nil. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 final class SignInRouter {
         
@@ -16,18 +16,6 @@ final class SignInRouter {
         self.view = view
     }
 
-    static func createModule() -> SignInViewProtocol {
-        let view: SignInViewController = SignInViewController()
-        let interactor: SignInInteractor = SignInInteractor()
-        let router: SignInRouter = SignInRouter(view: view)
-        let presenter: SignInPresenter = SignInPresenter(view: view, interactor: interactor, router: router)
-        
-        view.presenter = presenter
-        interactor.presenter = presenter
-        interactor.webService = WebService.shared
-        
-        return view
-    }
 }
 
 // Presenter -> Router
@@ -38,7 +26,7 @@ extension SignInRouter: SignInRouterProtocol {
             assertionFailure("can't got navigationController, please check.")
             return
         }
-        let homeModule = HomeRouter.createModule()
+        let homeModule = HomeModule.build()
         nav.setViewControllers([homeModule], animated: true)
     }
     

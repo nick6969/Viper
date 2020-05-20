@@ -6,7 +6,7 @@
 //  Copyright © 2020 co.Kcin.Nil. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 final class SignUpRouter {
     
@@ -16,18 +16,6 @@ final class SignUpRouter {
         self.view = view
     }
 
-    static func createModule() -> SignUpViewProtocol {
-        let view: SignUpViewController = SignUpViewController()
-        let interactor: SignUpInteractor = SignUpInteractor()
-        let router: SignUpRouter = SignUpRouter(view: view)
-        let presenter: SignUpPresenter = SignUpPresenter(view: view, interactor: interactor, router: router)
-        
-        view.presenter = presenter
-        interactor.presenter = presenter
-        interactor.webService = WebService.shared
-        
-        return view
-    }
 }
 
 // Presenter -> Router
@@ -39,7 +27,7 @@ extension SignUpRouter: SignUpRouterProtocol {
             assertionFailure("got nav failure")
             return
         }
-        let home = HomeRouter.createModule()
+        let home = HomeModule.build()
         nav.setViewControllers([home], animated: true)
     }
     

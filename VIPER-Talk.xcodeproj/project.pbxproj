@@ -31,6 +31,11 @@
 		017D09F4246CBE1E0032DEEB /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D09EE246CBE1E0032DEEB /* MainInteractor.swift */; };
 		017D09F7246CC6CB0032DEEB /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D09F6246CC6CB0032DEEB /* ProgressIndicator.swift */; };
 		017D0A06246CCE600032DEEB /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D0A05246CCE600032DEEB /* WebService.swift */; };
+		0196F3FF2475ED6A00816F79 /* MainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0196F3FE2475ED6A00816F79 /* MainModule.swift */; };
+		0196F4012475EDD900816F79 /* SignInModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0196F4002475EDD900816F79 /* SignInModule.swift */; };
+		0196F4032475EE3500816F79 /* SignUpModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0196F4022475EE3500816F79 /* SignUpModule.swift */; };
+		0196F4052475EE7000816F79 /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0196F4042475EE7000816F79 /* HomeModule.swift */; };
+		0196F4072475EEBF00816F79 /* CategoryModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0196F4062475EEBF00816F79 /* CategoryModule.swift */; };
 		01B95DD2246D303400D896D1 /* category.json in Resources */ = {isa = PBXBuildFile; fileRef = 01B95DCF246D303400D896D1 /* category.json */; };
 		01B95DD3246D303400D896D1 /* branch.json in Resources */ = {isa = PBXBuildFile; fileRef = 01B95DD0246D303400D896D1 /* branch.json */; };
 		01B95DD4246D303400D896D1 /* smallCategory.json in Resources */ = {isa = PBXBuildFile; fileRef = 01B95DD1246D303400D896D1 /* smallCategory.json */; };
@@ -86,6 +91,11 @@
 		017D09EE246CBE1E0032DEEB /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		017D09F6246CC6CB0032DEEB /* ProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
 		017D0A05246CCE600032DEEB /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		0196F3FE2475ED6A00816F79 /* MainModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModule.swift; sourceTree = "<group>"; };
+		0196F4002475EDD900816F79 /* SignInModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModule.swift; sourceTree = "<group>"; };
+		0196F4022475EE3500816F79 /* SignUpModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModule.swift; sourceTree = "<group>"; };
+		0196F4042475EE7000816F79 /* HomeModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModule.swift; sourceTree = "<group>"; };
+		0196F4062475EEBF00816F79 /* CategoryModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModule.swift; sourceTree = "<group>"; };
 		01B95DCF246D303400D896D1 /* category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = category.json; sourceTree = "<group>"; };
 		01B95DD0246D303400D896D1 /* branch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = branch.json; sourceTree = "<group>"; };
 		01B95DD1246D303400D896D1 /* smallCategory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = smallCategory.json; sourceTree = "<group>"; };
@@ -127,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				017D09EE246CBE1E0032DEEB /* MainInteractor.swift */,
+				0196F3FE2475ED6A00816F79 /* MainModule.swift */,
 				017D09EA246CBE1E0032DEEB /* MainPresenter.swift */,
 				017D09ED246CBE1E0032DEEB /* MainProtocols.swift */,
 				017D09EB246CBE1E0032DEEB /* MainRouter.swift */,
@@ -191,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				013573F6246E2FEA004C9602 /* CategoryInteractor.swift */,
+				0196F4062475EEBF00816F79 /* CategoryModule.swift */,
 				013573F2246E2FEA004C9602 /* CategoryPresenter.swift */,
 				013573F5246E2FEA004C9602 /* CategoryProtocols.swift */,
 				013573F3246E2FEA004C9602 /* CategoryRouter.swift */,
@@ -214,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				017D099C246BE9F30032DEEB /* SignInInteractor.swift */,
+				0196F4002475EDD900816F79 /* SignInModule.swift */,
 				017D0998246BE9F30032DEEB /* SignInPresenter.swift */,
 				017D099B246BE9F30032DEEB /* SignInProtocols.swift */,
 				017D0999246BE9F30032DEEB /* SignInRouter.swift */,
@@ -288,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				01C2CD93246D9BD9005B5B9F /* HomeInteractor.swift */,
+				0196F4042475EE7000816F79 /* HomeModule.swift */,
 				01C2CD8F246D9BD9005B5B9F /* HomePresenter.swift */,
 				01C2CD92246D9BD9005B5B9F /* HomeProtocols.swift */,
 				01C2CD90246D9BD9005B5B9F /* HomeRouter.swift */,
@@ -300,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				01C2F68F247419B4006FA2AC /* SignUpInteractor.swift */,
+				0196F4022475EE3500816F79 /* SignUpModule.swift */,
 				01C2F68B247419B4006FA2AC /* SignUpPresenter.swift */,
 				01C2F68E247419B4006FA2AC /* SignUpProtocols.swift */,
 				01C2F68C247419B4006FA2AC /* SignUpRouter.swift */,
@@ -494,27 +509,32 @@
 				017D09A6246C54D60032DEEB /* AlertHelp.swift in Sources */,
 				01184359246245CE00007317 /* AppDelegate.swift in Sources */,
 				013573FC246E2FEA004C9602 /* CategoryInteractor.swift in Sources */,
+				0196F4072475EEBF00816F79 /* CategoryModule.swift in Sources */,
 				013573F8246E2FEA004C9602 /* CategoryPresenter.swift in Sources */,
 				013573FB246E2FEA004C9602 /* CategoryProtocols.swift in Sources */,
 				013573F9246E2FEA004C9602 /* CategoryRouter.swift in Sources */,
 				013573FA246E2FEA004C9602 /* CategoryViewController.swift in Sources */,
 				01C2CD99246D9BD9005B5B9F /* HomeInteractor.swift in Sources */,
+				0196F4052475EE7000816F79 /* HomeModule.swift in Sources */,
 				01C2CD95246D9BD9005B5B9F /* HomePresenter.swift in Sources */,
 				01C2CD98246D9BD9005B5B9F /* HomeProtocols.swift in Sources */,
 				01C2CD96246D9BD9005B5B9F /* HomeRouter.swift in Sources */,
 				01C2CD97246D9BD9005B5B9F /* HomeViewController.swift in Sources */,
 				017D09F4246CBE1E0032DEEB /* MainInteractor.swift in Sources */,
+				0196F3FF2475ED6A00816F79 /* MainModule.swift in Sources */,
 				017D09F0246CBE1E0032DEEB /* MainPresenter.swift in Sources */,
 				017D09F3246CBE1E0032DEEB /* MainProtocols.swift in Sources */,
 				017D09F1246CBE1E0032DEEB /* MainRouter.swift in Sources */,
 				017D09F2246CBE1E0032DEEB /* MainViewController.swift in Sources */,
 				017D09F7246CC6CB0032DEEB /* ProgressIndicator.swift in Sources */,
 				017D09A2246BE9F30032DEEB /* SignInInteractor.swift in Sources */,
+				0196F4012475EDD900816F79 /* SignInModule.swift in Sources */,
 				017D099E246BE9F30032DEEB /* SignInPresenter.swift in Sources */,
 				017D09A1246BE9F30032DEEB /* SignInProtocols.swift in Sources */,
 				017D099F246BE9F30032DEEB /* SignInRouter.swift in Sources */,
 				017D09A0246BE9F30032DEEB /* SignInViewController.swift in Sources */,
 				01C2F695247419B4006FA2AC /* SignUpInteractor.swift in Sources */,
+				0196F4032475EE3500816F79 /* SignUpModule.swift in Sources */,
 				01C2F691247419B4006FA2AC /* SignUpPresenter.swift in Sources */,
 				01C2F694247419B4006FA2AC /* SignUpProtocols.swift in Sources */,
 				01C2F692247419B4006FA2AC /* SignUpRouter.swift in Sources */,
