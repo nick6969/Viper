@@ -10,8 +10,8 @@ import Foundation
 
 final class SignInInteractor {
     
-    weak var presenter: SignInOutputInteractorProtocol?
-    var webService: SignInWebServiceProtocol?
+    unowned var presenter: SignInOutputInteractorProtocol!
+    var webService: SignInWebServiceProtocol!
     
 }
 
@@ -21,27 +21,27 @@ extension SignInInteractor: SignInInputInteractorProtocol {
     func signIn(name: String?, password: String?) {
 
         guard let name = name, let password = password else {
-            self.presenter?.signInFailure(error: SignInError.inputEmpty)
+            self.presenter.signInFailure(error: SignInError.inputEmpty)
             return
         }
         
         guard name.validate(with: .username) else {
-            self.presenter?.signInFailure(error: SignInError.usernameNoCorrect)
+            self.presenter.signInFailure(error: SignInError.usernameNoCorrect)
             return
         }
         
         guard password.validate(with: .password) else {
-            self.presenter?.signInFailure(error: SignInError.passwordNoCorrect)
+            self.presenter.signInFailure(error: SignInError.passwordNoCorrect)
             return
         }
         
-        webService?.signIn(name: name, password: password, success: { [weak self] in
+        webService.signIn(name: name, password: password, success: { [weak self] in
             DispatchQueue.main.async {
-                self?.presenter?.signInSuccess()
+                self?.presenter.signInSuccess()
             }
         }, failure: { [weak self] error in
             DispatchQueue.main.async {
-                self?.presenter?.signInFailure(error: error)
+                self?.presenter.signInFailure(error: error)
             }
         })
 

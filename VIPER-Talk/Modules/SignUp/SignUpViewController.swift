@@ -10,7 +10,7 @@ import UIKit
 
 final class SignUpViewController: UIViewController {
     
-    var presenter: SignUpPresenterProtocol?
+    var presenter: SignUpPresenterProtocol!
     
     private
     let usernameTextField: UITextField = UITextField()
@@ -64,7 +64,7 @@ final class SignUpViewController: UIViewController {
     @objc
     private
     func didTap(confirm button: UIButton) {
-        presenter?.send(username: usernameTextField.text,
+        presenter.send(username: usernameTextField.text,
                         password: passwordTextField.text)
     }
     
@@ -88,7 +88,7 @@ extension SignUpViewController: UITextFieldDelegate {
             password = prospectiveText
         }
         
-        presenter?.check(username: username, password: password)
+        presenter.check(username: username, password: password)
         
         return true
     }

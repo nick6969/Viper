@@ -10,8 +10,8 @@ import Foundation
 
 final class SignUpInteractor {
     
-    weak var presenter: SignUpOutputInteractorProtocol?
-    var webService: SignUpWebServiceProtocol?
+    unowned var presenter: SignUpOutputInteractorProtocol!
+    var webService: SignUpWebServiceProtocol!
 
 }
 
@@ -33,30 +33,30 @@ extension SignUpInteractor: SignUpInputInteractorProtocol {
     func send(username: String?, password: String?) {
         
         guard let name = username, let password = password else {
-            self.presenter?.signUpFailure(error: SignInError.inputEmpty)
+            self.presenter.signUpFailure(error: SignInError.inputEmpty)
             return
         }
         
         guard name.validate(with: .username) else {
-            self.presenter?.signUpFailure(error: SignInError.usernameNoCorrect)
+            self.presenter.signUpFailure(error: SignInError.usernameNoCorrect)
             return
         }
         
         guard password.validate(with: .password) else {
-            self.presenter?.signUpFailure(error: SignInError.passwordNoCorrect)
+            self.presenter.signUpFailure(error: SignInError.passwordNoCorrect)
             return
         }
         
         webService?.signUp(name: name, password: password, success: { [weak self] in
             
             DispatchQueue.main.async {
-                self?.presenter?.signUpSuccess()
+                self?.presenter.signUpSuccess()
             }
             
         }, failure: {[weak self] error in
             
             DispatchQueue.main.async {
-                self?.presenter?.signUpFailure(error: error)
+                self?.presenter.signUpFailure(error: error)
             }
             
         })

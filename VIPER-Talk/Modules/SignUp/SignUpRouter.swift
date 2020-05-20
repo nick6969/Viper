@@ -10,12 +10,16 @@ import UIKit
 
 final class SignUpRouter {
     
-    weak var viewController: UIViewController?
+    unowned var viewController: UIViewController
     
+    init(viewController: UIViewController) {
+        self.viewController = viewController
+    }
+
     static func createModule() -> UIViewController {
         let view: SignUpViewController = SignUpViewController()
         let interactor: SignUpInteractor = SignUpInteractor()
-        let router: SignUpRouter = SignUpRouter()
+        let router: SignUpRouter = SignUpRouter(viewController: view)
         let presenter: SignUpPresenter = SignUpPresenter(view: view, interactor: interactor, router: router)
         
         view.presenter = presenter
@@ -32,7 +36,7 @@ extension SignUpRouter: SignUpRouterProtocol {
 
     func changeToHome() {
      
-        guard let nav = viewController?.navigationController else {
+        guard let nav = viewController.navigationController else {
             assertionFailure("got nav failure")
             return
         }

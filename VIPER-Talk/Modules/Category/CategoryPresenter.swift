@@ -10,7 +10,7 @@ import Foundation
 
 final class CategoryPresenter {
     
-    private weak var view: CategoryViewProtocol?
+    private weak var view: CategoryViewProtocol!
     private let interactor: CategoryInputInteractorProtocol
     private let router: CategoryRouterProtocol
     private let branchID: String

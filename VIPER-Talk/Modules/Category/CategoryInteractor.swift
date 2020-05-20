@@ -10,8 +10,8 @@ import Foundation
 
 final class CategoryInteractor {
     
-    weak var presenter: CategoryOutputInteractorProtocol?
-    var webService: CategoryWebServiceProtocol?
+    unowned var presenter: CategoryOutputInteractorProtocol!
+    var webService: CategoryWebServiceProtocol!
     var models: [BranchModel] = []
 }
 
@@ -19,14 +19,14 @@ final class CategoryInteractor {
 extension CategoryInteractor: CategoryInputInteractorProtocol {
     
     func loadCategory(id: String) {
-        webService?.getCategoryWith(id: id, success: {[weak self] models in
+        webService.getCategoryWith(id: id, success: {[weak self] models in
             DispatchQueue.main.async {
                 self?.models = models
-                self?.presenter?.loadCategorySuccess()
+                self?.presenter.loadCategorySuccess()
             }
             }, failure: {[weak self] error in
                 DispatchQueue.main.async {
-                    self?.presenter?.loadCategotyFailure(error: error)
+                    self?.presenter.loadCategotyFailure(error: error)
                 }
         })
     }

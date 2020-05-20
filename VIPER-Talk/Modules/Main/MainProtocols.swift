@@ -24,7 +24,7 @@ protocol MainPresenterProtocol: AnyObject {
 
 // MARK: Interactor Input
 protocol MainInputInteractorProtocol: AnyObject {
-    var presenter: MainOutputInteractorProtocol? { get set }
+    var presenter: MainOutputInteractorProtocol! { get set }
 
     // Presenter -> Interactor
 }
@@ -36,7 +36,7 @@ protocol MainOutputInteractorProtocol: AnyObject {
 
 // MARK: View
 protocol MainViewProtocol: AnyObject {
-    var presenter: MainPresenterProtocol? { get set }
+    var presenter: MainPresenterProtocol! { get set }
     
     // PRESENTER -> VIEW
 }

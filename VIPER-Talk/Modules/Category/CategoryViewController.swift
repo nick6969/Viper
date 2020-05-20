@@ -10,7 +10,7 @@ import UIKit
 
 final class CategoryViewController: UIViewController {
     
-    var presenter: CategoryPresenterProtocol?
+    var presenter: CategoryPresenterProtocol!
     
     private
     lazy var tableView: UITableView = {
@@ -29,7 +29,7 @@ final class CategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        presenter?.loadCategory()
+        presenter.loadCategory()
     }
     
     private
@@ -66,15 +66,13 @@ extension CategoryViewController: CategoryViewProtocol {
 extension CategoryViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.numberOfItem(in: section) ?? 0
+        return presenter.numberOfItem(in: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(with: UITableViewCell.self)
         
-        guard let model = presenter?.modelAt(index: indexPath.row) else {
-            return cell
-        }
+        let model = presenter.modelAt(index: indexPath.row)
         
         cell.textLabel?.text = model.name
         return cell
@@ -82,7 +80,7 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        presenter?.didSelect(indexPath)
+        presenter.didSelect(indexPath)
     }
     
 }

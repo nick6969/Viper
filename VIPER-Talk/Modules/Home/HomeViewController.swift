@@ -10,7 +10,7 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
-    var presenter: HomePresenterProtocol?
+    var presenter: HomePresenterProtocol!
     
     private
     lazy var tableView: UITableView = {
@@ -29,7 +29,7 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        presenter?.loadBranch()
+        presenter.loadBranch()
     }
     
     private
@@ -65,22 +65,21 @@ extension HomeViewController: HomeViewProtocol {
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.numberOfItem(in: section) ?? 0
+        return presenter.numberOfItem(in: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(with: UITableViewCell.self)
 
-        guard let model = presenter?.modelAt(index: indexPath.row) else {
-            return cell
-        }
+        let model = presenter.modelAt(index: indexPath.row)
+        
         cell.textLabel?.text = model.name
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        presenter?.didSelect(indexPath)
+        presenter.didSelect(indexPath)
     }
         
 }

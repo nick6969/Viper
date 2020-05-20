@@ -23,8 +23,8 @@ protocol SignInPresenterProtocol: AnyObject {
 
 // MARK: Interactor Input
 protocol SignInInputInteractorProtocol: AnyObject {
-    var presenter: SignInOutputInteractorProtocol? { get set }
-    var webService: SignInWebServiceProtocol? { get set }
+    var presenter: SignInOutputInteractorProtocol! { get set }
+    var webService: SignInWebServiceProtocol! { get set }
 
     // Presenter -> Interactor
     func signIn(name: String?, password: String?)
@@ -40,7 +40,7 @@ protocol SignInOutputInteractorProtocol: AnyObject {
 
 // MARK: View
 protocol SignInViewProtocol: AnyObject {
-    var presenter: SignInPresenterProtocol? { get set }
+    var presenter: SignInPresenterProtocol! { get set }
     
     // PRESENTER -> VIEW
     func showLoading()

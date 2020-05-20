@@ -10,7 +10,7 @@ import Foundation
 
 final class MainInteractor {
     
-    weak var presenter: MainOutputInteractorProtocol?
+    unowned var presenter: MainOutputInteractorProtocol!
     
 }
 

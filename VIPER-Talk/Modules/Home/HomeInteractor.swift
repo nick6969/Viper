@@ -10,8 +10,8 @@ import Foundation
 
 final class HomeInteractor {
     
-    weak var presenter: HomeOutputInteractorProtocol?
-    var webService: HomeWebServiceProtocol?
+    unowned var presenter: HomeOutputInteractorProtocol!
+    var webService: HomeWebServiceProtocol!
     
     var models: [BranchModel] = []
 }
@@ -20,14 +20,14 @@ final class HomeInteractor {
 extension HomeInteractor: HomeInputInteractorProtocol {
     
     func loadBranch() {
-        webService?.getBranch(success: { [weak self] models in
+        webService.getBranch(success: { [weak self] models in
             DispatchQueue.main.async {
                 self?.models = models
-                self?.presenter?.loadBranchSuccess()
+                self?.presenter.loadBranchSuccess()
             }
         }, failure: { [weak self] error in
             DispatchQueue.main.async {
-                self?.presenter?.loadBranchFailure(error: error)
+                self?.presenter.loadBranchFailure(error: error)
             }
         })
     }

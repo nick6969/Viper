@@ -25,8 +25,8 @@ protocol HomePresenterProtocol: AnyObject {
 
 // MARK: Interactor Input
 protocol HomeInputInteractorProtocol: AnyObject {
-    var presenter: HomeOutputInteractorProtocol? { get set }
-    var webService: HomeWebServiceProtocol? { get set }
+    var presenter: HomeOutputInteractorProtocol! { get set }
+    var webService: HomeWebServiceProtocol! { get set }
     var models: [BranchModel] { get }
     
     // Presenter -> Interactor
@@ -42,7 +42,7 @@ protocol HomeOutputInteractorProtocol: AnyObject {
 
 // MARK: View
 protocol HomeViewProtocol: AnyObject {
-    var presenter: HomePresenterProtocol? { get set }
+    var presenter: HomePresenterProtocol! { get set }
     
     // PRESENTER -> VIEW
     func showLoading()

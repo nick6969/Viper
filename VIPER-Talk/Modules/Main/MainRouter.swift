@@ -10,12 +10,16 @@ import UIKit
 
 final class MainRouter {
     
-    weak var viewController: UIViewController?
+    unowned var viewController: UIViewController
     
+    init(viewController: UIViewController) {
+        self.viewController = viewController
+    }
+
     static func createModule() -> UIViewController {
         let view: MainViewController = MainViewController()
         let interactor: MainInteractor = MainInteractor()
-        let router: MainRouter = MainRouter()
+        let router: MainRouter = MainRouter(viewController: view)
         let presenter: MainPresenter = MainPresenter(view: view, interactor: interactor, router: router)
         
         view.presenter = presenter
@@ -30,7 +34,7 @@ final class MainRouter {
 extension MainRouter: MainRouterProtocol {
 
     func pushToSignIn() {
-        guard let nav: UINavigationController = viewController?.navigationController else {
+        guard let nav = viewController.navigationController else {
             assertionFailure("can't got navigationController, please check.")
             return
         }
@@ -39,7 +43,7 @@ extension MainRouter: MainRouterProtocol {
     }
     
     func pushToSignUp() {
-        guard let nav: UINavigationController = viewController?.navigationController else {
+        guard let nav = viewController.navigationController else {
             assertionFailure("can't got navigationController, please check.")
             return
         }

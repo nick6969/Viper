@@ -25,8 +25,8 @@ protocol CategoryPresenterProtocol: AnyObject {
 
 // MARK: Interactor Input
 protocol CategoryInputInteractorProtocol: AnyObject {
-    var presenter: CategoryOutputInteractorProtocol? { get set }
-    var webService: CategoryWebServiceProtocol? { get set }
+    var presenter: CategoryOutputInteractorProtocol! { get set }
+    var webService: CategoryWebServiceProtocol! { get set }
     var models: [BranchModel] { get }
 
     // Presenter -> Interactor
@@ -42,7 +42,7 @@ protocol CategoryOutputInteractorProtocol: AnyObject {
 
 // MARK: View
 protocol CategoryViewProtocol: AnyObject {
-    var presenter: CategoryPresenterProtocol? { get set }
+    var presenter: CategoryPresenterProtocol! { get set }
     
     // PRESENTER -> VIEW
     func showLoading()
