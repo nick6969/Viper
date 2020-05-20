@@ -10,7 +10,7 @@ import Foundation
 
 final class MainInteractor {
     
-    var presenter: MainOutputInteractorProtocol?
+    weak var presenter: MainOutputInteractorProtocol?
     
 }
 

@@ -10,7 +10,7 @@ import Foundation
 
 final class SignUpInteractor {
     
-    var presenter: SignUpOutputInteractorProtocol?
+    weak var presenter: SignUpOutputInteractorProtocol?
     var webService: SignUpWebServiceProtocol?
 
 }

@@ -10,7 +10,7 @@ import Foundation
 
 final class HomeInteractor {
     
-    var presenter: HomeOutputInteractorProtocol?
+    weak var presenter: HomeOutputInteractorProtocol?
     var webService: HomeWebServiceProtocol?
     
     var models: [BranchModel] = []

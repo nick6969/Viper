@@ -10,7 +10,7 @@ import Foundation
 
 final class CategoryInteractor {
     
-    var presenter: CategoryOutputInteractorProtocol?
+    weak var presenter: CategoryOutputInteractorProtocol?
     var webService: CategoryWebServiceProtocol?
     var models: [BranchModel] = []
 }
