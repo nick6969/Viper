@@ -10,7 +10,7 @@ import UIKit
 
 final class MainRouter {
     
-    unowned var viewController: UIViewController
+    private unowned var viewController: UIViewController
     
     init(viewController: UIViewController) {
         self.viewController = viewController
@@ -24,7 +24,6 @@ final class MainRouter {
         
         view.presenter = presenter
         interactor.presenter = presenter
-        router.viewController = view
         
         return view
     }

@@ -10,7 +10,7 @@ import UIKit
 
 final class SignUpRouter {
     
-    unowned var viewController: UIViewController
+    private unowned var viewController: UIViewController
     
     init(viewController: UIViewController) {
         self.viewController = viewController
@@ -25,7 +25,6 @@ final class SignUpRouter {
         view.presenter = presenter
         interactor.presenter = presenter
         interactor.webService = WebService.shared
-        router.viewController = view
         
         return view
     }
