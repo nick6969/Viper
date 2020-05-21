@@ -10,7 +10,7 @@ import UIKit
 
 enum MainModule {
     
-    static func build() -> MainViewProtocol {
+    static func build() -> MainPresenterToViewProtocol {
         let view: MainViewController = MainViewController()
         let interactor: MainInteractor = MainInteractor()
         let router: MainRouter = MainRouter(view: view)

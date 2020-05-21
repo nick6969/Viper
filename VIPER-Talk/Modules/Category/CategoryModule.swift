@@ -10,7 +10,7 @@ import UIKit
 
 enum CategoryModule {
     
-    static func build(branchID: String) -> CategoryViewProtocol {
+    static func build(branchID: String) -> CategoryPresenterToViewProtocol {
         let view: CategoryViewController = CategoryViewController()
         let interactor: CategoryInteractor = CategoryInteractor()
         let router: CategoryRouter = CategoryRouter(view: view)

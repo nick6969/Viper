@@ -10,14 +10,14 @@ import Foundation
 
 final class HomeInteractor {
     
-    unowned var presenter: HomeOutputInteractorProtocol!
+    unowned var presenter: HomeInteractorToPresenterProtocol!
     var webService: HomeWebServiceProtocol!
     
     var models: [BranchModel] = []
 }
 
 // Presenter -> Interactor
-extension HomeInteractor: HomeInputInteractorProtocol {
+extension HomeInteractor: HomePresenterToInteractorProtocol {
     
     func loadBranch() {
         webService.getBranch(success: { [weak self] models in

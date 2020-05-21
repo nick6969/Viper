@@ -10,7 +10,7 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
-    var presenter: HomePresenterProtocol!
+    var presenter: HomeViewToPresenterProtocol!
     
     private
     lazy var tableView: UITableView = {
@@ -43,7 +43,7 @@ final class HomeViewController: UIViewController {
 }
 
 // PRESENTER -> VIEW
-extension HomeViewController: HomeViewProtocol {
+extension HomeViewController: HomePresenterToViewProtocol {
 
     func showLoading() {
         view.showProgress()

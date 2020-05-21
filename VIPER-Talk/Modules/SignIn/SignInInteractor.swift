@@ -10,13 +10,13 @@ import Foundation
 
 final class SignInInteractor {
     
-    unowned var presenter: SignInOutputInteractorProtocol!
+    unowned var presenter: SignInInteractorToPresenterProtocol!
     var webService: SignInWebServiceProtocol!
     
 }
 
 // Presenter -> Interactor
-extension SignInInteractor: SignInInputInteractorProtocol {
+extension SignInInteractor: SignInPresenterToInteractorProtocol {
 
     func signIn(name: String?, password: String?) {
 

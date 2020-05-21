@@ -8,14 +8,12 @@
 
 import UIKit
 
-// MARK: Router
-protocol HomeRouterProtocol: AnyObject {
+protocol HomePresenterToRouterProtocol: AnyObject {
     // Presenter -> Router
     func pushToCatrgoty(id: String)
 }
 
-// MARK: Presenter
-protocol HomePresenterProtocol: AnyObject {
+protocol HomeViewToPresenterProtocol: AnyObject {
     // View -> Presenter
     func loadBranch()
     func numberOfItem(in section: Int) -> Int
@@ -23,36 +21,27 @@ protocol HomePresenterProtocol: AnyObject {
     func didSelect(_ indexPath: IndexPath)
 }
 
-// MARK: Interactor Input
-protocol HomeInputInteractorProtocol: AnyObject {
-    var presenter: HomeOutputInteractorProtocol! { get set }
-    var webService: HomeWebServiceProtocol! { get set }
+protocol HomePresenterToViewProtocol: UIViewController {
+    // PRESENTER -> VIEW
+    func showLoading()
+    func dismissLoading()
+    func showMessage(_ message: String)
+    func loadDone()
+}
+
+protocol HomePresenterToInteractorProtocol: AnyObject {
     var models: [BranchModel] { get }
     
     // Presenter -> Interactor
     func loadBranch()
 }
 
-// MARK: Interactor Output
-protocol HomeOutputInteractorProtocol: AnyObject {
+protocol HomeInteractorToPresenterProtocol: AnyObject {
     // Interactor -> Presenter
     func loadBranchSuccess()
     func loadBranchFailure(error: Error?)
 }
 
-// MARK: View
-protocol HomeViewProtocol: UIViewController {
-    var presenter: HomePresenterProtocol! { get set }
-    
-    // PRESENTER -> VIEW
-    func showLoading()
-    func dismissLoading()
-    
-    func showMessage(_ message: String)
-    func loadDone()
-}
-
-// MARK: WebService
 protocol HomeWebServiceProtocol: AnyObject {
     // Interactor -> WebService
     func getBranch(success: ModelSuccessClosure<[BranchModel]>?,

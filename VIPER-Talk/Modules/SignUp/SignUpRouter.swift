@@ -10,16 +10,16 @@ import Foundation
 
 final class SignUpRouter {
     
-    private unowned var view: SignUpViewProtocol
+    private unowned var view: SignUpPresenterToViewProtocol
 
-    init(view: SignUpViewProtocol) {
+    init(view: SignUpPresenterToViewProtocol) {
         self.view = view
     }
 
 }
 
 // Presenter -> Router
-extension SignUpRouter: SignUpRouterProtocol {
+extension SignUpRouter: SignUpPresenterToRouterProtocol {
 
     func changeToHome() {
      

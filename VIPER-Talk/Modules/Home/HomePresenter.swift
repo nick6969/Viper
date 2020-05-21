@@ -10,11 +10,13 @@ import Foundation
 
 final class HomePresenter {
     
-    private weak var view: HomeViewProtocol?
-    private let interactor: HomeInputInteractorProtocol
-    private let router: HomeRouterProtocol
+    private weak var view: HomePresenterToViewProtocol?
+    private let interactor: HomePresenterToInteractorProtocol
+    private let router: HomePresenterToRouterProtocol
         
-    init(view: HomeViewProtocol, interactor: HomeInputInteractorProtocol, router: HomeRouterProtocol) {
+    init(view: HomePresenterToViewProtocol,
+         interactor: HomePresenterToInteractorProtocol,
+         router: HomePresenterToRouterProtocol) {
         self.view = view
         self.interactor = interactor
         self.router = router
@@ -22,7 +24,7 @@ final class HomePresenter {
 }
 
 // View -> Presenter
-extension HomePresenter: HomePresenterProtocol {
+extension HomePresenter: HomeViewToPresenterProtocol {
     
     func loadBranch() {
         view?.showLoading()
@@ -44,7 +46,7 @@ extension HomePresenter: HomePresenterProtocol {
 }
 
 // Interactor -> Presenter
-extension HomePresenter: HomeOutputInteractorProtocol {
+extension HomePresenter: HomeInteractorToPresenterProtocol {
     
     func loadBranchSuccess() {
         view?.dismissLoading()

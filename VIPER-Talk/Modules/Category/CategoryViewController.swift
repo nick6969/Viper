@@ -10,7 +10,7 @@ import UIKit
 
 final class CategoryViewController: UIViewController {
     
-    var presenter: CategoryPresenterProtocol!
+    var presenter: CategoryViewToPresenterProtocol!
     
     private
     lazy var tableView: UITableView = {
@@ -43,7 +43,7 @@ final class CategoryViewController: UIViewController {
 }
 
 // PRESENTER -> VIEW
-extension CategoryViewController: CategoryViewProtocol {
+extension CategoryViewController: CategoryPresenterToViewProtocol {
 
     func showLoading() {
         view.showProgress()

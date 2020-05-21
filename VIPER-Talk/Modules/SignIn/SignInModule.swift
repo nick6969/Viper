@@ -10,7 +10,7 @@ import UIKit
 
 enum SignInModule {
     
-    static func build() -> SignInViewProtocol {
+    static func build() -> SignInPresenterToViewProtocol {
         let view: SignInViewController = SignInViewController()
         let interactor: SignInInteractor = SignInInteractor()
         let router: SignInRouter = SignInRouter(view: view)

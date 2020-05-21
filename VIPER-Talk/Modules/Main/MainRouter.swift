@@ -10,16 +10,16 @@ import Foundation
 
 final class MainRouter {
     
-    private unowned var view: MainViewProtocol
+    private unowned var view: MainPresenterToViewProtocol
 
-    init(view: MainViewProtocol) {
+    init(view: MainPresenterToViewProtocol) {
         self.view = view
     }
 
 }
 
 // Presenter -> Router
-extension MainRouter: MainRouterProtocol {
+extension MainRouter: MainPresenterToRouterProtocol {
 
     func pushToSignIn() {
         guard let nav = view.navigationController else {

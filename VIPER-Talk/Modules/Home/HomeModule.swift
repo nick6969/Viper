@@ -10,7 +10,7 @@ import UIKit
 
 enum HomeModule {
     
-    static func build() -> HomeViewProtocol {
+    static func build() -> HomePresenterToViewProtocol {
         let view: HomeViewController = HomeViewController()
         let interactor: HomeInteractor = HomeInteractor()
         let router: HomeRouter = HomeRouter(view: view)

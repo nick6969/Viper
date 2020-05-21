@@ -10,13 +10,13 @@ import Foundation
 
 final class CategoryInteractor {
     
-    unowned var presenter: CategoryOutputInteractorProtocol!
+    unowned var presenter: CategoryInteractorToPresenterProtocol!
     var webService: CategoryWebServiceProtocol!
     var models: [BranchModel] = []
 }
 
 // Presenter -> Interactor
-extension CategoryInteractor: CategoryInputInteractorProtocol {
+extension CategoryInteractor: CategoryPresenterToInteractorProtocol {
     
     func loadCategory(id: String) {
         webService.getCategoryWith(id: id, success: {[weak self] models in

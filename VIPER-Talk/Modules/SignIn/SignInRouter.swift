@@ -10,16 +10,16 @@ import Foundation
 
 final class SignInRouter {
         
-    private unowned var view: SignInViewProtocol
+    private unowned var view: SignInPresenterToViewProtocol
 
-    init(view: SignInViewProtocol) {
+    init(view: SignInPresenterToViewProtocol) {
         self.view = view
     }
 
 }
 
 // Presenter -> Router
-extension SignInRouter: SignInRouterProtocol {
+extension SignInRouter: SignInPresenterToRouterProtocol {
 
     func changeToHomeModule() {
         guard let nav = view.navigationController else {

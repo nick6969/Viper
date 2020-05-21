@@ -10,16 +10,16 @@ import Foundation
 
 final class HomeRouter {
     
-    private unowned var view: HomeViewProtocol
+    private unowned var view: HomePresenterToViewProtocol
     
-    init(view: HomeViewProtocol) {
+    init(view: HomePresenterToViewProtocol) {
         self.view = view
     }
 
 }
 
 // Presenter -> Router
-extension HomeRouter: HomeRouterProtocol {
+extension HomeRouter: HomePresenterToRouterProtocol {
 
     func pushToCatrgoty(id: String) {
         guard let nav = view.navigationController else {

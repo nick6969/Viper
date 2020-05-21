@@ -10,11 +10,13 @@ import Foundation
 
 final class SignUpPresenter {
     
-    private weak var view: SignUpViewProtocol?
-    private let interactor: SignUpInputInteractorProtocol
-    private let router: SignUpRouterProtocol
+    private weak var view: SignUpPresenterToViewProtocol?
+    private let interactor: SignUpPresenterToInteractorProtocol
+    private let router: SignUpPresenterToRouterProtocol
     
-    init(view: SignUpViewProtocol, interactor: SignUpInputInteractorProtocol, router: SignUpRouterProtocol) {
+    init(view: SignUpPresenterToViewProtocol,
+         interactor: SignUpPresenterToInteractorProtocol,
+         router: SignUpPresenterToRouterProtocol) {
         self.view = view
         self.interactor = interactor
         self.router = router
@@ -22,7 +24,7 @@ final class SignUpPresenter {
 }
 
 // View -> Presenter
-extension SignUpPresenter: SignUpPresenterProtocol {
+extension SignUpPresenter: SignUpViewToPresenterProtocol {
     
     func check(username: String?, password: String?) {
         let enabled = interactor.check(username: username, password: password)
@@ -37,7 +39,7 @@ extension SignUpPresenter: SignUpPresenterProtocol {
 }
 
 // Interactor -> Presenter
-extension SignUpPresenter: SignUpOutputInteractorProtocol {
+extension SignUpPresenter: SignUpInteractorToPresenterProtocol {
     
     func signUpSuccess() {
         view?.dismissLoading()

@@ -10,7 +10,7 @@ import UIKit
 
 final class MainViewController: UIViewController {
     
-    var presenter: MainPresenterProtocol!
+    var presenter: MainViewToPresenterProtocol!
     
     private
     lazy var buttonClosure: ( (String) -> UIButton) = { title in
@@ -61,6 +61,6 @@ final class MainViewController: UIViewController {
 }
 
 // PRESENTER -> VIEW
-extension MainViewController: MainViewProtocol {
+extension MainViewController: MainPresenterToViewProtocol {
 
 }

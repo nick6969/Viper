@@ -10,11 +10,11 @@ import Foundation
 
 final class MainInteractor {
     
-    unowned var presenter: MainOutputInteractorProtocol!
+    unowned var presenter: MainInteractorToPresenterProtocol!
     
 }
 
 // Presenter -> Interactor
-extension MainInteractor: MainInputInteractorProtocol {
+extension MainInteractor: MainPresenterToInteractorProtocol {
 
 }

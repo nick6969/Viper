@@ -8,35 +8,26 @@
 
 import UIKit
 
-// MARK: Router
-protocol MainRouterProtocol: AnyObject {
+protocol MainPresenterToRouterProtocol: AnyObject {
     // Presenter -> Router
     func pushToSignIn()
     func pushToSignUp()
 }
 
-// MARK: Presenter
-protocol MainPresenterProtocol: AnyObject {
+protocol MainViewToPresenterProtocol: AnyObject {
     // View -> Presenter
     func pushToSignIn()
     func pushToSignUp()
 }
 
-// MARK: Interactor Input
-protocol MainInputInteractorProtocol: AnyObject {
-    var presenter: MainOutputInteractorProtocol! { get set }
+protocol MainPresenterToViewProtocol: UIViewController {
+    // PRESENTER -> VIEW
+}
 
+protocol MainPresenterToInteractorProtocol: AnyObject {
     // Presenter -> Interactor
 }
 
-// MARK: Interactor Output
-protocol MainOutputInteractorProtocol: AnyObject {
+protocol MainInteractorToPresenterProtocol: AnyObject {
     // Interactor -> Presenter
-}
-
-// MARK: View
-protocol MainViewProtocol: UIViewController {
-    var presenter: MainPresenterProtocol! { get set }
-    
-    // PRESENTER -> VIEW
 }

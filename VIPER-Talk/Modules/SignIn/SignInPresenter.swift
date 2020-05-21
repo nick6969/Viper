@@ -10,11 +10,13 @@ import Foundation
 
 final class SignInPresenter {
     
-    private weak var view: SignInViewProtocol?
-    private let interactor: SignInInputInteractorProtocol
-    private let router: SignInRouterProtocol
+    private weak var view: SignInPresenterToViewProtocol?
+    private let interactor: SignInPresenterToInteractorProtocol
+    private let router: SignInPresenterToRouterProtocol
     
-    init(view: SignInViewProtocol, interactor: SignInInputInteractorProtocol, router: SignInRouterProtocol) {
+    init(view: SignInPresenterToViewProtocol,
+         interactor: SignInPresenterToInteractorProtocol,
+         router: SignInPresenterToRouterProtocol) {
         self.view = view
         self.interactor = interactor
         self.router = router
@@ -23,7 +25,7 @@ final class SignInPresenter {
 }
 
 // View -> Presenter
-extension SignInPresenter: SignInPresenterProtocol {
+extension SignInPresenter: SignInViewToPresenterProtocol {
     
     func send(name: String?, password: String?) {
         view?.showLoading()
@@ -38,7 +40,7 @@ extension SignInPresenter: SignInPresenterProtocol {
 }
 
 // Interactor -> Presenter
-extension SignInPresenter: SignInOutputInteractorProtocol {
+extension SignInPresenter: SignInInteractorToPresenterProtocol {
     
     func signInSuccess() {
         view?.dismissLoading()

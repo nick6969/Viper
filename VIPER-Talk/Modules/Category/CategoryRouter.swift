@@ -10,16 +10,16 @@ import Foundation
 
 final class CategoryRouter {
     
-    private unowned var view: CategoryViewProtocol
+    private unowned var view: CategoryPresenterToViewProtocol
 
-    init(view: CategoryViewProtocol) {
+    init(view: CategoryPresenterToViewProtocol) {
         self.view = view
     }
     
 }
 
 // Presenter -> Router
-extension CategoryRouter: CategoryRouterProtocol {
+extension CategoryRouter: CategoryPresenterToRouterProtocol {
 
     func pushToSmallCategory(id: String) {
         // TODO: - pushToSmallCategory

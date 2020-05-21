@@ -8,14 +8,12 @@
 
 import UIKit
 
-// MARK: Router
-protocol CategoryRouterProtocol: AnyObject {
+protocol CategoryPresenterToRouterProtocol: AnyObject {
     // Presenter -> Router
     func pushToSmallCategory(id: String)
 }
 
-// MARK: Presenter
-protocol CategoryPresenterProtocol: AnyObject {
+protocol CategoryViewToPresenterProtocol: AnyObject {
     // View -> Presenter
     func loadCategory()
     func numberOfItem(in section: Int) -> Int
@@ -23,33 +21,25 @@ protocol CategoryPresenterProtocol: AnyObject {
     func didSelect(_ indexPath: IndexPath)
 }
 
-// MARK: Interactor Input
-protocol CategoryInputInteractorProtocol: AnyObject {
-    var presenter: CategoryOutputInteractorProtocol! { get set }
-    var webService: CategoryWebServiceProtocol! { get set }
+protocol CategoryPresenterToViewProtocol: UIViewController {
+    // PRESENTER -> VIEW
+    func showLoading()
+    func dismissLoading()
+    func showMessage(_ message: String)
+    func loadDone()
+}
+
+protocol CategoryPresenterToInteractorProtocol: AnyObject {
     var models: [BranchModel] { get }
 
     // Presenter -> Interactor
     func loadCategory(id: String)
 }
 
-// MARK: Interactor Output
-protocol CategoryOutputInteractorProtocol: AnyObject {
+protocol CategoryInteractorToPresenterProtocol: AnyObject {
     // Interactor -> Presenter
     func loadCategorySuccess()
     func loadCategotyFailure(error: Error?)
-}
-
-// MARK: View
-protocol CategoryViewProtocol: UIViewController {
-    var presenter: CategoryPresenterProtocol! { get set }
-    
-    // PRESENTER -> VIEW
-    func showLoading()
-    func dismissLoading()
-    
-    func showMessage(_ message: String)
-    func loadDone()
 }
 
 protocol CategoryWebServiceProtocol {

@@ -10,12 +10,15 @@ import Foundation
 
 final class CategoryPresenter {
     
-    private weak var view: CategoryViewProtocol!
-    private let interactor: CategoryInputInteractorProtocol
-    private let router: CategoryRouterProtocol
+    private weak var view: CategoryPresenterToViewProtocol!
+    private let interactor: CategoryPresenterToInteractorProtocol
+    private let router: CategoryPresenterToRouterProtocol
     private let branchID: String
         
-    init(view: CategoryViewProtocol, interactor: CategoryInputInteractorProtocol, router: CategoryRouterProtocol, branchID: String) {
+    init(view: CategoryPresenterToViewProtocol,
+         interactor: CategoryPresenterToInteractorProtocol,
+         router: CategoryPresenterToRouterProtocol,
+         branchID: String) {
         self.view = view
         self.interactor = interactor
         self.router = router
@@ -24,7 +27,7 @@ final class CategoryPresenter {
 }
 
 // View -> Presenter
-extension CategoryPresenter: CategoryPresenterProtocol {
+extension CategoryPresenter: CategoryViewToPresenterProtocol {
     
     func loadCategory() {
         view?.showLoading()
@@ -47,7 +50,7 @@ extension CategoryPresenter: CategoryPresenterProtocol {
 }
 
 // Interactor -> Presenter
-extension CategoryPresenter: CategoryOutputInteractorProtocol {
+extension CategoryPresenter: CategoryInteractorToPresenterProtocol {
     
     func loadCategorySuccess() {
         view?.dismissLoading()

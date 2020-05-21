@@ -10,13 +10,13 @@ import Foundation
 
 final class SignUpInteractor {
     
-    unowned var presenter: SignUpOutputInteractorProtocol!
+    unowned var presenter: SignUpInteractorToPresenterProtocol!
     var webService: SignUpWebServiceProtocol!
 
 }
 
 // Presenter -> Interactor
-extension SignUpInteractor: SignUpInputInteractorProtocol {
+extension SignUpInteractor: SignUpPresenterToInteractorProtocol {
     
     func check(username: String?, password: String?) -> Bool {
         guard

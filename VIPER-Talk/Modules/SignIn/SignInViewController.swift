@@ -10,7 +10,7 @@ import UIKit
 
 final class SignInViewController: UIViewController {
     
-    var presenter: SignInPresenterProtocol!
+    var presenter: SignInViewToPresenterProtocol!
     
     private
     let usernameTextField: UITextField = UITextField()
@@ -74,7 +74,7 @@ final class SignInViewController: UIViewController {
 }
 
 // PRESENTER -> VIEW
-extension SignInViewController: SignInViewProtocol {
+extension SignInViewController: SignInPresenterToViewProtocol {
     
     func showLoading() {
         view.showProgress()

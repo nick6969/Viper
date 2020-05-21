@@ -8,47 +8,35 @@
 
 import UIKit
 
-// MARK: Router
-protocol SignInRouterProtocol: AnyObject {
+protocol SignInPresenterToRouterProtocol: AnyObject {
     // Presenter -> Router
     func changeToHomeModule()
 }
 
-// MARK: Presenter
-protocol SignInPresenterProtocol: AnyObject {
+protocol SignInViewToPresenterProtocol: AnyObject {
     // View -> Presenter
     func send(name: String?, password: String?)
     func check(name: String?, password: String?)
 }
 
-// MARK: Interactor Input
-protocol SignInInputInteractorProtocol: AnyObject {
-    var presenter: SignInOutputInteractorProtocol! { get set }
-    var webService: SignInWebServiceProtocol! { get set }
+protocol SignInPresenterToViewProtocol: UIViewController {
+    // PRESENTER -> VIEW
+    func showLoading()
+    func dismissLoading()
+    func showMessage(_ message: String)
+    func sendButtonStatus(enabled: Bool)
+}
 
+protocol SignInPresenterToInteractorProtocol: AnyObject {
     // Presenter -> Interactor
     func signIn(name: String?, password: String?)
     func check(name: String?, password: String?) -> Bool
 }
 
-// MARK: Interactor Output
-protocol SignInOutputInteractorProtocol: AnyObject {
+protocol SignInInteractorToPresenterProtocol: AnyObject {
     // Interactor -> Presenter
     func signInSuccess()
     func signInFailure(error: Error?)
-}
-
-// MARK: View
-protocol SignInViewProtocol: UIViewController {
-    var presenter: SignInPresenterProtocol! { get set }
-    
-    // PRESENTER -> VIEW
-    func showLoading()
-    func dismissLoading()
-    
-    func showMessage(_ message: String)
-    
-    func sendButtonStatus(enabled: Bool)
 }
 
 protocol SignInWebServiceProtocol: AnyObject {
