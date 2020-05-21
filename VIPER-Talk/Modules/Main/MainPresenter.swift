@@ -10,11 +10,13 @@ import Foundation
 
 final class MainPresenter {
     
-    private weak var view: MainPresenterToViewProtocol?
+    private unowned var view: MainPresenterToViewProtocol!
     private let interactor: MainPresenterToInteractorProtocol
     private let router: MainPresenterToRouterProtocol
     
-    init(view: MainPresenterToViewProtocol, interactor: MainPresenterToInteractorProtocol, router: MainPresenterToRouterProtocol) {
+    init(view: MainPresenterToViewProtocol,
+         interactor: MainPresenterToInteractorProtocol,
+         router: MainPresenterToRouterProtocol) {
         self.view = view
         self.interactor = interactor
         self.router = router

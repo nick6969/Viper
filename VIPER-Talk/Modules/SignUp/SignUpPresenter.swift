@@ -10,7 +10,7 @@ import Foundation
 
 final class SignUpPresenter {
     
-    private weak var view: SignUpPresenterToViewProtocol?
+    private unowned var view: SignUpPresenterToViewProtocol!
     private let interactor: SignUpPresenterToInteractorProtocol
     private let router: SignUpPresenterToRouterProtocol
     

@@ -10,7 +10,7 @@ import Foundation
 
 final class HomePresenter {
     
-    private weak var view: HomePresenterToViewProtocol?
+    private unowned var view: HomePresenterToViewProtocol!
     private let interactor: HomePresenterToInteractorProtocol
     private let router: HomePresenterToRouterProtocol
         

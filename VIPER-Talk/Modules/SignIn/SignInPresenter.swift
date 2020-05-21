@@ -10,7 +10,7 @@ import Foundation
 
 final class SignInPresenter {
     
-    private weak var view: SignInPresenterToViewProtocol?
+    private unowned var view: SignInPresenterToViewProtocol!
     private let interactor: SignInPresenterToInteractorProtocol
     private let router: SignInPresenterToRouterProtocol
     

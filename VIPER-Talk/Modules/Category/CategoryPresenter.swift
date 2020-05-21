@@ -10,7 +10,7 @@ import Foundation
 
 final class CategoryPresenter {
     
-    private weak var view: CategoryPresenterToViewProtocol!
+    private unowned var view: CategoryPresenterToViewProtocol!
     private let interactor: CategoryPresenterToInteractorProtocol
     private let router: CategoryPresenterToRouterProtocol
     private let branchID: String
