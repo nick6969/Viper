@@ -24,6 +24,7 @@ final class MainViewController: UIViewController {
     private
     lazy var signUpButton: UIButton = buttonClosure("Sign Up")
     lazy var signInButton: UIButton = buttonClosure("Sign In")
+    lazy var todoListButton: UIButton = buttonClosure("Go to Todo List")
 
     private
     lazy var stackView: UIStackView = {
@@ -34,6 +35,7 @@ final class MainViewController: UIViewController {
         stackView.distribution = .fillEqually
         stackView.addArrangedSubview(self.signInButton)
         stackView.addArrangedSubview(self.signUpButton)
+        stackView.addArrangedSubview(self.todoListButton)
         return stackView
     }()
 
@@ -53,6 +55,8 @@ final class MainViewController: UIViewController {
             presenter.pushToSignIn()
         case signUpButton:
             presenter.pushToSignUp()
+        case todoListButton:
+            presenter.pushToTodoList()
         default:
             break
         }

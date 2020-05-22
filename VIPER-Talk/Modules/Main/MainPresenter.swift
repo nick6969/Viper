@@ -34,6 +34,10 @@ extension MainPresenter: MainViewToPresenterProtocol {
         router.pushToSignUp()
     }
     
+    func pushToTodoList() {
+        router.pushToTodoList()
+    }
+
 }
 
 // Interactor -> Presenter

@@ -12,12 +12,14 @@ protocol MainPresenterToRouterProtocol: AnyObject {
     // Presenter -> Router
     func pushToSignIn()
     func pushToSignUp()
+    func pushToTodoList()
 }
 
 protocol MainViewToPresenterProtocol: AnyObject {
     // View -> Presenter
     func pushToSignIn()
     func pushToSignUp()
+    func pushToTodoList()
 }
 
 protocol MainPresenterToViewProtocol: UIViewController {
